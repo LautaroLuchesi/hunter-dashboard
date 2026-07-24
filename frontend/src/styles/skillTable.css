@@ -1,0 +1,298 @@
+/* ===========================
+   TARJETA PRINCIPAL
+=========================== */
+
+.skill-table {
+    width: min(100%, 1450px);
+    margin: 32px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================
+   TITULO DEL SKILL
+=========================== */
+
+.skill-title {
+    margin: 0;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.skill-table.blue .skill-title {
+    background: #1565c0;
+}
+
+.skill-table.green .skill-title {
+    background: #2e7d32;
+}
+
+.skill-table.purple .skill-title {
+    background: #7b1fa2;
+}
+
+/* ===========================
+   CONTENEDOR TM - TT
+=========================== */
+
+.turnos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 25px 30px 10px;
+
+}
+
+.turno-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.turno-card {
+    flex: 1;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.turno-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.turno-title.blue {
+    background: #1565c0;
+}
+
+.turno-title.green {
+    background: #2e7d32;
+}
+
+.turno-title.purple {
+    background: #7b1fa2;
+}
+
+/* ===========================
+   TABLAS
+=========================== */
+
+.skill-table table {
+    width: 100%;
+    border-collapse: collapse;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.skill-table:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .20);
+
+}
+
+.skill-table th,
+.skill-table td {
+    padding: 10px 14px;
+}
+
+.skill-table th {
+    background: #f3f5f7;
+    font-weight: 600;
+    text-align: center;
+}
+
+.skill-table td {
+    border-top: 1px solid #ececec;
+    text-align: center;
+}
+
+/* ===========================
+   COLORES CONVERSION
+=========================== */
+
+.conv-alta {
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
+.conv-media {
+    background: #ffc107;
+    color: #222;
+    font-weight: bold;
+}
+
+.conv-baja {
+    background: #f44336;
+    color: white;
+    font-weight: bold;
+}
+
+/* ===========================
+   TITULO DE LA SECCION
+=========================== */
+
+.dashboard-section h2 {
+    margin: 0;
+    padding: 14px 20px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* ===========================
+   TARJETA TOTAL DIARIO
+=========================== */
+
+/* ===========================
+   TOTAL DIARIO
+=========================== */
+
+.total-diario-card {
+
+    width: 480px;
+
+    margin: 10px auto 25px;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.total-diario-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.18);
+
+}
+
+.total-header {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 28px;
+
+    color: white;
+
+    font-weight: 700;
+
+    padding: 14px;
+
+}
+
+.total-diario-card.blue {
+
+    border: 2px solid #1565c0;
+
+}
+
+.total-diario-card.green {
+
+    border: 2px solid #2e7d32;
+
+}
+
+.total-diario-card.purple {
+
+    border: 2px solid #7b1fa2;
+
+}
+
+.total-diario-card.blue .total-header {
+    background: #1565c0;
+}
+
+.total-diario-card.green .total-header {
+    background: #2e7d32;
+}
+
+.total-diario-card.purple .total-header {
+    background: #7b1fa2;
+}
+
+.total-grid {
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    padding: 22px;
+
+}
+
+.total-item {
+
+    flex: 1;
+
+    text-align: center;
+
+}
+
+.total-item:not(:last-child) {
+
+    border-right: 1px solid #e5e7eb;
+
+}
+
+.total-item span {
+
+    display: block;
+
+    color: #777;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+}
+
+.total-item strong {
+
+    color: #1565c0;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+.total-item.conversion strong {
+
+    color: #2e7d32;
+
+    font-size: 42px;
+
+}

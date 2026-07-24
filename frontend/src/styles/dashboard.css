@@ -1,0 +1,83 @@
+.dashboard{
+
+    width:100%;
+
+    max-width:1700px;
+
+    margin:0 auto;
+
+    padding:25px;
+
+}
+
+.dashboard-header h1{
+    margin: 0;
+    padding: 14px 20px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    flex-direction:row;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.resumen-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4, minmax(280px,1fr));
+
+    gap:24px;
+
+    align-items:start;
+
+}
+
+.dashboard-section{
+
+    margin-top:40px;
+
+}
+
+.section-title{
+
+    margin-bottom:20px;
+
+    text-align:left;
+
+    font-size:1.6rem;
+
+    font-weight:600;
+
+    color:#1f2937;
+
+}
+
+.total-diario-card.blue .total-header{
+    background:#1565c0;
+}
+
+.total-diario-card.green .total-header{
+    background:#2e7d32;
+}
+
+.total-diario-card.purple .total-header{
+    background:#7b1fa2;
+}
