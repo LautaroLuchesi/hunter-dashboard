@@ -62,6 +62,18 @@ const generateReport = async (fechaSeleccionada) => {
         r => r.fecha === fechaFinal
     );
 
+    console.table(
+        asesores.map(a => ({
+            fecha: a.fecha,
+            skill: a.skill,
+            id: a.idAsesor
+        }))
+    );
+
+    const presentismoDia = presentismo.filter(
+        p => p.fecha === fechaFinal
+    );
+
     return {
 
         fechas,
@@ -70,7 +82,9 @@ const generateReport = async (fechaSeleccionada) => {
 
         dashboard,
 
-        asesores
+        asesores,
+
+        presentismo: presentismoDia
 
     };
 

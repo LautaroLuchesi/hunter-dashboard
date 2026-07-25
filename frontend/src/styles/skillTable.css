@@ -185,11 +185,11 @@
 
 }
 
-.total-diario-card:hover{
+.total-diario-card:hover {
 
-    transform:translateY(-6px);
+    transform: translateY(-6px);
 
-    box-shadow:0 12px 24px rgba(0,0,0,.18);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .18);
 
 }
 
@@ -295,4 +295,141 @@
 
     font-size: 42px;
 
+}
+
+/*==========================
+    CONTENEDOR DE TARJETAS
+==========================*/
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 32px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+
+/*==========================
+      PRESENTISMO
+==========================*/
+
+/*==========================
+      PRESENTISMO
+==========================*/
+
+.presentismo-grid{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+}
+
+.presentismo-item{
+
+    padding:14px 12px;
+    text-align:center;
+
+}
+
+.presentismo-item:not(:last-child){
+
+    border-right:1px solid #ececec;
+
+}
+
+.presentismo-item span{
+
+    display:block;
+    font-size:14px;
+    color:#666;
+    margin-bottom:12px;
+
+}
+
+.presentismo-item strong{
+
+    font-size:34px;
+    color:#1458b8;
+
+}
+
+.presentismo-item .verde{
+
+    color:#36b24a;
+
+}
+
+.presentismo-item .rojo{
+
+    color:#ef4444;
+
+}
+
+.presentismo-footer{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    border-top:1px solid #ececec;
+
+    padding:18px 20px;
+
+}
+
+.presentismo-porcentaje{
+
+    font-size:34px;
+    font-weight:bold;
+    margin-bottom:8px;
+
+}
+
+.presentismo-texto{
+
+    font-size:15px;
+    color:#666;
+    text-align:center;
+
+}
+.presentismo-porcentaje{
+
+    font-size:34px;
+    margin-bottom:12px;
+
+}
+
+.presentismo-texto{
+
+    font-size:14px;
+    color:#777;
+
+}
+
+/* La tarjeta de presentismo será más angosta */
+.presentismo-card{
+    width: 360px;
+}
+
+/* Como reutilizamos total-diario-card */
+.total-diario-card.presentismo{
+    min-height: 172px;   /* ajustá este valor hasta que coincida */
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-container{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:18px;      /* antes 32px */
+}
+
+.presentismo-content{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
 }

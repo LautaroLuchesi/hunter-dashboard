@@ -3,21 +3,27 @@ import { ordenarAsesores } from "../utils/sortUtils";
 import { calcularTotales } from "../utils/calcUtils";
 import TurnoTable from "./TurnoTable";
 import TotalCard from "./TotalCard";
+import PresentismoCard from "./PresentismoCard";
 
 function SkillTable({
     titulo,
     skill,
     color,
     datos = [],
+    presentismo = []
 }) {
 
     useEffect(() => {
-        console.log(`${titulo}:`, datos);
+
     }, [datos, titulo]);
 
     const registros = datos.filter(
-        (asesor) => asesor.skill === skill
+        (asesor) =>
+            asesor.skill.toUpperCase() === skill.toUpperCase()
     );
+    console.log("Skill:", skill);
+    console.log("Registros:", registros.length);
+    console.table(registros);
 
     const tm = ordenarAsesores(
         registros.filter((asesor) => asesor.turno === "TM")
@@ -57,10 +63,19 @@ function SkillTable({
 
             </div>
 
-            <TotalCard
-                color={color}
-                total={totalDiario}
-            />
+            <div className="cards-container">
+
+                <PresentismoCard
+                    color={color}
+                    registros={presentismo}
+                />
+
+                <TotalCard
+                    color={color}
+                    total={totalDiario}
+                />
+
+            </div>
 
         </div>
 

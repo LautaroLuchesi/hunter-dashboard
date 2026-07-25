@@ -18,7 +18,8 @@ function Dashboard() {
         dashboard,
         asesores,
         loading,
-        error
+        error,
+        presentismo
     } = useReport(fechaSeleccionada);
 
     useEffect(() => {
@@ -96,9 +97,10 @@ function Dashboard() {
 
                 <SkillTable
                     titulo="Inbound"
-                    skill="Inbound"
+                    skill="INBOUND"
                     color="blue"
                     datos={asesores}
+                    presentismo={presentismo}
                 />
 
                 <SkillTable
@@ -106,6 +108,7 @@ function Dashboard() {
                     skill="Google"
                     color="green"
                     datos={asesores}
+                    presentismo={presentismo}
                 />
 
                 <SkillTable
@@ -113,6 +116,7 @@ function Dashboard() {
                     skill="Facebook"
                     color="purple"
                     datos={asesores}
+                    presentismo={presentismo}
                 />
 
             </section>
