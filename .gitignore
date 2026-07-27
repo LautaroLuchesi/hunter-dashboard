@@ -1,0 +1,28 @@
+# Red de seguridad a nivel raiz.
+# Cada subproyecto (backend/, frontend/) tiene ademas su propio .gitignore.
+
+# Dependencias
+node_modules/
+
+# Secretos: nunca se suben al repo
+.env
+.env.*
+!.env.example
+credentials/
+*.pem
+*-key.json
+
+# Builds
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
