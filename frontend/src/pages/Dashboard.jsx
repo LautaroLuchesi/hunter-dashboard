@@ -8,6 +8,7 @@ import "../styles/skillTable.css";
 import GeneralKpi from "../components/GeneralKpi";
 import { skills } from "../config/skills";
 import SkillTable from "../components/SkillTable";
+import { agruparAsesores } from "../utils/advisorUtils";
 
 function Dashboard() {
 
@@ -21,6 +22,8 @@ function Dashboard() {
         error,
         presentismo
     } = useReport(fechaSeleccionada);
+
+    const asesoresAgrupados = agruparAsesores(asesores);
 
     useEffect(() => {
 
@@ -129,7 +132,7 @@ function Dashboard() {
                 </h2>
 
                 <AdvisorTable
-                    datos={asesores}
+                    datos={asesoresAgrupados}
                 />
 
             </section>
