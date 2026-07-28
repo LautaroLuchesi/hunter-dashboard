@@ -51,12 +51,6 @@ function Dashboard() {
                     Hunter Uruguay
                 </h1>
 
-                <DateSelector
-                    fechas={fechas}
-                    fecha={fechaSeleccionada}
-                    onChange={setFechaSeleccionada}
-                />
-
             </header>
 
             <section className="dashboard-section">
@@ -64,6 +58,12 @@ function Dashboard() {
                 <h2 className="section-title">
                     Resumen General
                 </h2>
+
+                <DateSelector
+                    fechas={fechas}
+                    fecha={fechaSeleccionada}
+                    onChange={setFechaSeleccionada}
+                />
 
                 <GeneralKpi dashboard={dashboard} />
 

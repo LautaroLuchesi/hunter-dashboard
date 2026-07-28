@@ -2,25 +2,29 @@ import "../styles/date-selector.css";
 
 function DateSelector({ fechas, fecha, onChange }) {
 
-    return (
+    return(
 
-        <select  className="date-selector"
-            value={fecha}
-            onChange={(e) => onChange(e.target.value)}
-        >
+        <div className="date-selector">
 
-            {fechas.map((f) => (
+            {fechas.map((f) => {
 
-                <option
-                    key={f}
-                    value={f}
-                >
-                    {f}
-                </option>
+                const dia = Number(f.split("-")[2]);
 
-            ))}
+                return (
 
-        </select>
+                    <button
+                        key={f}
+                        className={fecha === f ? "day-button active" : "day-button"}
+                        onClick={() => onChange(f)}
+                    >
+                        {dia}
+                    </button>
+
+                );
+
+            })}
+
+        </div>
 
     );
 
