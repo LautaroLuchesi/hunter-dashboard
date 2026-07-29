@@ -55,10 +55,6 @@ function Dashboard() {
 
             <section className="dashboard-section">
 
-                <h2 className="section-title">
-                    Resumen General
-                </h2>
-
                 <DateSelector
                     fechas={fechas}
                     fecha={fechaSeleccionada}
