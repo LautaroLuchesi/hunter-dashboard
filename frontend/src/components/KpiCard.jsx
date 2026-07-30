@@ -6,7 +6,7 @@ function KpiCard({ titulo, valor }) {
 
     return (
 
-        <div className={`kpi-card ${esConversion ? "conversion" : ""}`}>
+        <div className="kpi-card">
 
             <h3 className="kpi-title">
                 {titulo}

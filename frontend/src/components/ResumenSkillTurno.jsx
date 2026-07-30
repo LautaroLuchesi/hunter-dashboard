@@ -13,14 +13,10 @@ function ResumenSkillTurno({ titulo, datos = {} }) {
         <div className={`resumen-card ${color}`}>
 
             <div className="resumen-header">
-
-                <div className="header-left">
-                    <span className="header-dot"></span>
-                    <span>{titulo}</span>
-                </div>
-
+                <span className="header-dot"></span>
+                <span>{titulo}</span>
             </div>
-
+            
             <div className="resumen-body">
 
                 <div className="resumen-item">

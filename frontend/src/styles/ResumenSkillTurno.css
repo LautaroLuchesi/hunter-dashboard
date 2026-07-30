@@ -1,52 +1,22 @@
-.header-left {
+.resumen-card{
 
-    display: flex;
+    background:#eef4ff;
 
-    align-items: center;
+    border-radius:22px;
 
-    justify-content: center;
+    overflow:hidden;
 
-    gap: 10px;
+    border:1px solid #d7e4ff;
 
-}
+    box-shadow:0 8px 25px rgba(30,58,138,.08);
 
-.header-dot {
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 
-    width: 12px;
+    will-change:transform;
 
-    height: 12px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    opacity: .95;
-
-}
-
-.resumen-card {
-
-    background: #fff;
-
-    border-radius: 16px;
-
-    overflow: hidden;
-
-    border: 1px solid #e5e7eb;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
-
-    .resumen-card {
-
-        transition:
-            transform .25s ease,
-            box-shadow .25s ease;
-
-        will-change: transform;
-
-    }
-
-    width: 100%;
+    width:100%;
 
 }
 
@@ -58,42 +28,72 @@
 
 }
 
-.resumen-header {
+.resumen-header{
 
-    color: #fff;
+    display:flex;
 
-    font-size: 20px;
+    justify-content:center;
 
-    font-weight: 700;
+    align-items:center;
 
-    padding: 14px 18px;
+    gap:10px;
 
-    text-align: center;
+    padding:14px 18px;
 
-}
+    background:#dbe8ff;
 
-.inbound .resumen-header {
+    color:#1e3a8a;
 
-    background: #2f80ed;
+    font-size:20px;
 
-}
+    font-weight:700;
 
-.google .resumen-header {
-
-    background: #27ae60;
+    border-bottom:1px solid #c7d8ff;
 
 }
 
-.facebook .resumen-header {
+.header-dot{
 
-    background: #8e44ad;
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    flex-shrink:0;
 
 }
 
-.formulario .resumen-header {
+.inbound .header-dot{
+    background:#2563eb;
+}
 
-    background: #f39c12;
+.google .header-dot{
+    background:#22c55e;
+}
 
+.facebook .header-dot{
+    background:#a855f7;
+}
+
+.formulario .header-dot{
+    background:#f59e0b;
+}
+
+.inbound{
+    border-top:4px solid #2563eb;
+}
+
+.google{
+    border-top:4px solid #22c55e;
+}
+
+.facebook{
+    border-top:4px solid #a855f7;
+}
+
+.formulario{
+    border-top:4px solid #f59e0b;
 }
 
 .resumen-body {
@@ -124,7 +124,7 @@
 
 .resumen-item span {
 
-    color: #6b7280;
+    color:#5f7fae;
 
     font-size: 14px;
 
@@ -132,11 +132,11 @@
 
 .resumen-item strong {
 
-    color: #111827;
+    color: #1f2937;
 
     font-size: 24px;
 
-    font-weight: 700;
+    font-weight: 750;
 
 }
 
@@ -188,20 +188,8 @@
 
     color: #0ea44b;
 
-    font-size: 40px;
+    font-size: 26px;
 
-    font-weight: 700;
+    font-weight: 750;
 
-}
-
-.resumen-header.green {
-    background: #2fb15d;
-}
-
-.resumen-header.purple {
-    background: #8e44ad;
-}
-
-.resumen-header.orange {
-    background: #f39c12;
 }

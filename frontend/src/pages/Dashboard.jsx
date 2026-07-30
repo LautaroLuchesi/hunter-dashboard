@@ -9,6 +9,8 @@ import GeneralKpi from "../components/GeneralKpi";
 import { skills } from "../config/skills";
 import SkillTable from "../components/SkillTable";
 import { agruparAsesores } from "../utils/advisorUtils";
+import logoGout from "../assets/Logo_gout.png";
+import logoHunter from "../assets/Logo_upselling.png";
 
 function Dashboard() {
 
@@ -47,9 +49,33 @@ function Dashboard() {
 
             <header className="dashboard-header">
 
-                <h1 className="dashboard-title">
-                    Hunter Uruguay
-                </h1>
+                <div className="dashboard-logos">
+
+                    <img
+                        src={logoGout}
+                        alt="GOUT"
+                        className="dashboard-logo"
+                    />
+
+                    <img
+                        src={logoHunter}
+                        alt="Hunter"
+                        className="dashboard-logo"
+                    />
+
+                </div>
+
+                <div className="dashboard-title-group">
+
+                    <span className="dashboard-company">
+                        GOUT ARGENTINA
+                    </span>
+
+                    <h1>
+                        Seguimiento Hunter Uruguay
+                    </h1>
+
+                </div>
 
             </header>
 
@@ -88,37 +114,37 @@ function Dashboard() {
 
             </section>
 
-            <section className="dashboard-section">
+            <SkillTable
+                titulo="Inbound"
+                skill="INBOUND"
+                color="inbound"
+                datos={asesores}
+                presentismo={presentismo}
+            />
 
-                <h2 className="section-title">
-                    Detalle por Skill
-                </h2>
+            <SkillTable
+                titulo="Google"
+                skill="Google"
+                color="google"
+                datos={asesores}
+                presentismo={presentismo}
+            />
 
-                <SkillTable
-                    titulo="Inbound"
-                    skill="INBOUND"
-                    color="blue"
-                    datos={asesores}
-                    presentismo={presentismo}
-                />
+            <SkillTable
+                titulo="Facebook"
+                skill="Facebook"
+                color="facebook"
+                datos={asesores}
+                presentismo={presentismo}
+            />
 
-                <SkillTable
-                    titulo="Google"
-                    skill="Google"
-                    color="green"
-                    datos={asesores}
-                    presentismo={presentismo}
-                />
-
-                <SkillTable
-                    titulo="Facebook"
-                    skill="Facebook"
-                    color="purple"
-                    datos={asesores}
-                    presentismo={presentismo}
-                />
-
-            </section>
+            <SkillTable
+                titulo="Formulario"
+                skill="Formulario"
+                color="formulario"
+                datos={asesores}
+                presentismo={presentismo}
+            />
 
 
             <section className="dashboard-section">

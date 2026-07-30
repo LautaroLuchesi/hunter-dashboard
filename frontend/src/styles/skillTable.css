@@ -3,37 +3,65 @@
 =========================== */
 
 .skill-table {
-    width: min(100%, 1450px);
-    margin: 32px auto;
+
+    width: min(100%, 1350px);
+
+    margin: 24px auto;
+
     background: #ffffff;
-    border-radius: 12px;
+
+    border:1px solid #d7e4ff;
+
+    border-radius: 22px;
+
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+
+
 }
 
+.skill-table.inbound{
+    border-top:5px solid #2563eb;
+}
+
+.skill-table.google{
+    border-top:5px solid #22c55e;
+}
+
+.skill-table.facebook{
+    border-top:5px solid #a855f7;
+}
+
+.skill-table.formulario{
+    border-top:5px solid #f59e0b;
+}
 /* ===========================
    TITULO DEL SKILL
 =========================== */
 
-.skill-title {
-    margin: 0;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    font-size: 34px;
-    font-weight: 700;
-}
+.skill-title{
 
-.skill-table.blue .skill-title {
-    background: #1565c0;
-}
+    margin:0;
 
-.skill-table.green .skill-title {
-    background: #2e7d32;
-}
+    padding:12px 18px;
 
-.skill-table.purple .skill-title {
-    background: #7b1fa2;
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#eef4ff;
+
+    color:#1e3a8a;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    border-bottom:1px solid #d7e4ff;
+
 }
 
 /* ===========================
@@ -41,11 +69,18 @@
 =========================== */
 
 .turnos-container {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
-    gap: 60px;
-    padding: 25px 30px 10px;
+
+    gap: 24px;
+
+    margin-top: 8px;
+
+
 
 }
 
@@ -63,26 +98,24 @@
         box-shadow .25s ease;
 }
 
-.turno-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    color: white;
-    padding: 14px;
-    margin-bottom: 10px;
-    border-radius: 8px 8px 0 0;
-}
+.turno-title{
 
-.turno-title.blue {
-    background: #1565c0;
-}
+    padding:10px;
 
-.turno-title.green {
-    background: #2e7d32;
-}
+    background:#eef4ff;
 
-.turno-title.purple {
-    background: #7b1fa2;
+    color:#1e3a8a;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    border:1px solid #d7e4ff;
+
+    border-radius:14px 14px 0 0;
+
+    text-align:center;
+
 }
 
 /* ===========================
@@ -91,36 +124,62 @@
 
 .skill-table table {
     width: 100%;
+
     border-collapse: collapse;
 
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    background: white;
 
+    border-radius: 14px;
+
+    overflow: hidden;
+
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+        background: .2s ease;
+
+}
+
+thead {
+
+    background: #f8fbff;
 }
 
 .skill-table:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-3px);
 
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .20);
+    box-shadow: 0 12px 28px rgba(30, 58, 138, .12);
+
+}
+
+.skill-table tbody tr:hover {
+
+    background: #edf4ff;
 
 }
 
 .skill-table th,
 .skill-table td {
-    padding: 10px 14px;
+
+    padding: 5px 8px;
+
 }
 
 .skill-table th {
-    background: #f3f5f7;
+    background: #f8fbff;
+    color: #1e3a8a;
     font-weight: 600;
     text-align: center;
+    font-size: 16px;
 }
 
 .skill-table td {
-    border-top: 1px solid #ececec;
+    color:#1e3a8a;
+    border-top:1px solid #edf2ff;
     text-align: center;
+    font-size: 16px;
 }
 
 /* ===========================
@@ -150,16 +209,18 @@
 =========================== */
 
 .dashboard-section h2 {
-    margin: 0;
-    padding: 14px 20px;
-    font-size: 40px;
+    padding: 5px;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
-}
+    background: #eef4ff;
 
-/* ===========================
-   TARJETA TOTAL DIARIO
-=========================== */
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+}
 
 /* ===========================
    TOTAL DIARIO
@@ -167,17 +228,19 @@
 
 .total-diario-card {
 
-    width: 480px;
+    width: 430px;
 
     margin: 10px auto 25px;
 
-    background: #fff;
+    background: #eef4ff;
 
-    border-radius: 12px;
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
 
     overflow: hidden;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
 
     transition:
         transform .25s ease,
@@ -187,9 +250,9 @@
 
 .total-diario-card:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-3px);
 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, .18);
+    box-shadow: 0 12px 28px rgba(30, 58, 138, .12);
 
 }
 
@@ -201,45 +264,20 @@
 
     align-items: center;
 
-    font-size: 28px;
+    padding: 10px;
 
-    color: white;
+    font-size: 18px;
 
     font-weight: 700;
 
-    padding: 14px;
+    background: #dbe8ff;
+
+    color: #1e3a8a;
+
+    border-bottom: 1px solid #c7d8ff;
 
 }
 
-.total-diario-card.blue {
-
-    border: 2px solid #1565c0;
-
-}
-
-.total-diario-card.green {
-
-    border: 2px solid #2e7d32;
-
-}
-
-.total-diario-card.purple {
-
-    border: 2px solid #7b1fa2;
-
-}
-
-.total-diario-card.blue .total-header {
-    background: #1565c0;
-}
-
-.total-diario-card.green .total-header {
-    background: #2e7d32;
-}
-
-.total-diario-card.purple .total-header {
-    background: #7b1fa2;
-}
 
 .total-grid {
 
@@ -249,7 +287,7 @@
 
     align-items: center;
 
-    padding: 22px;
+    padding: 10px 8px;
 
 }
 
@@ -263,7 +301,7 @@
 
 .total-item:not(:last-child) {
 
-    border-right: 1px solid #e5e7eb;
+    border-right: 1px solid #dbe8ff;
 
 }
 
@@ -271,9 +309,9 @@
 
     display: block;
 
-    color: #777;
+    color:#5f7fae;
 
-    font-size: 15px;
+    font-size: 14px;
 
     margin-bottom: 8px;
 
@@ -281,9 +319,9 @@
 
 .total-item strong {
 
-    color: #1565c0;
+    color: #5977a3;
 
-    font-size: 34px;
+    font-size: 28px;
 
     font-weight: 700;
 
@@ -293,7 +331,31 @@
 
     color: #2e7d32;
 
-    font-size: 42px;
+    font-size: 34px;
+
+}
+
+.total-turno{
+
+    background:#f8fbff;
+
+    font-weight:700;
+
+}
+
+.total-turno td{
+
+    border-top:2px solid #d7e4ff;
+
+    color: #5977a3;
+
+}
+
+.total-turno td:first-child{
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
 
 }
 
@@ -306,130 +368,111 @@
     justify-content: center;
     align-items: stretch;
     gap: 32px;
-    margin-top: 35px;
+    margin-top: 28px;
     margin-bottom: 10px;
 }
 
-
 /*==========================
       PRESENTISMO
 ==========================*/
 
-/*==========================
-      PRESENTISMO
-==========================*/
-
-.presentismo-grid{
+.presentismo-grid {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 100%;
 }
 
-.presentismo-item{
+.presentismo-item {
 
-    padding:14px 12px;
-    text-align:center;
-
-}
-
-.presentismo-item:not(:last-child){
-
-    border-right:1px solid #ececec;
+    padding: 10px 8px;
+    text-align: center;
 
 }
 
-.presentismo-item span{
+.presentismo-item:not(:last-child) {
 
-    display:block;
-    font-size:14px;
-    color:#666;
-    margin-bottom:12px;
+    border-right:1px solid #dbe8ff;
 
 }
 
-.presentismo-item strong{
+.presentismo-item span {
 
-    font-size:34px;
-    color:#1458b8;
-
-}
-
-.presentismo-item .verde{
-
-    color:#36b24a;
+    display: block;
+    font-size: 13px;
+    color:#5f7fae;
+    margin-bottom: 8px;
 
 }
 
-.presentismo-item .rojo{
+.presentismo-item strong {
 
-    color:#ef4444;
+    font-size: 28px;
+    color: #1458b8;
 
 }
 
-.presentismo-footer{
+.presentismo-item .verde {
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    color: #36b24a;
 
-    border-top:1px solid #ececec;
+}
 
-    padding:18px 20px;
+.presentismo-item .rojo {
+
+    color: #ef4444;
+
+}
+
+.presentismo-footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid #dbe8ff;
+
+    padding: 18px 20px;
 
 }
 
 .presentismo-porcentaje{
 
-    font-size:34px;
-    font-weight:bold;
+    font-size:28px;
+
+    font-weight:700;
+
     margin-bottom:8px;
 
 }
 
 .presentismo-texto{
 
-    font-size:15px;
-    color:#666;
+    font-size:14px;
+
+    color: #5977a3;
+
     text-align:center;
 
 }
-.presentismo-porcentaje{
 
-    font-size:34px;
-    margin-bottom:12px;
 
-}
-
-.presentismo-texto{
-
-    font-size:14px;
-    color:#777;
-
-}
-
-/* La tarjeta de presentismo será más angosta */
-.presentismo-card{
-    width: 360px;
+.presentismo-card {
+    width: 430px;
 }
 
 /* Como reutilizamos total-diario-card */
-.total-diario-card.presentismo{
-    min-height: 172px;   /* ajustá este valor hasta que coincida */
+.total-diario-card.presentismo {
+    min-height: auto;
     display: flex;
     flex-direction: column;
 }
 
-.cards-container{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:18px;      /* antes 32px */
-}
 
-.presentismo-content{
+.presentismo-content {
     flex: 1;
     display: flex;
     align-items: stretch;
 }
+
