@@ -1,4 +1,6 @@
 # hunter-dashboard
+git init
 git status
-git status
-git commit -m "Mejorando menu de seleccion de fechas y KPIs"
+git add.
+git commit -m "Mejorando tarjetas de rendimiento por skill"
+git push origin develop

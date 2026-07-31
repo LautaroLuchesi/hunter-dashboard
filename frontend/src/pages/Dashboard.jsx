@@ -114,37 +114,45 @@ function Dashboard() {
 
             </section>
 
-            <SkillTable
-                titulo="Inbound"
-                skill="INBOUND"
-                color="inbound"
-                datos={asesores}
-                presentismo={presentismo}
-            />
+            <section className="dashboard-section">
 
-            <SkillTable
-                titulo="Google"
-                skill="Google"
-                color="google"
-                datos={asesores}
-                presentismo={presentismo}
-            />
+                <h2 className="section-title">
+                    Rendimiento detallado por asesor y skill
+                </h2>
 
-            <SkillTable
-                titulo="Facebook"
-                skill="Facebook"
-                color="facebook"
-                datos={asesores}
-                presentismo={presentismo}
-            />
+                <SkillTable
+                    titulo="Inbound"
+                    skill="INBOUND"
+                    color="inbound"
+                    datos={asesores}
+                    presentismo={presentismo}
+                />
 
-            <SkillTable
-                titulo="Formulario"
-                skill="Formulario"
-                color="formulario"
-                datos={asesores}
-                presentismo={presentismo}
-            />
+                <SkillTable
+                    titulo="Google"
+                    skill="Google"
+                    color="google"
+                    datos={asesores}
+                    presentismo={presentismo}
+                />
+
+                <SkillTable
+                    titulo="Facebook"
+                    skill="Facebook"
+                    color="facebook"
+                    datos={asesores}
+                    presentismo={presentismo}
+                />
+
+                <SkillTable
+                    titulo="Formulario"
+                    skill="Formulario"
+                    color="formulario"
+                    datos={asesores}
+                    presentismo={presentismo}
+                />
+
+            </section>
 
 
             <section className="dashboard-section">

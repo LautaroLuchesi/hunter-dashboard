@@ -6,7 +6,7 @@
 
     width: min(100%, 1350px);
 
-    margin: 24px auto;
+    margin: 44px auto;
 
     background: #ffffff;
 
@@ -214,6 +214,8 @@ thead {
     font-weight: 700;
     text-align: center;
     background: #eef4ff;
+
+    color: #1e3a8a;
 
     border: 1px solid #d7e4ff;
 
