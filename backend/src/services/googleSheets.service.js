@@ -10,19 +10,23 @@ const credentialsPath = path.join(
     "../../credentials/credentials.json"
 );
 
+console.log("Ruta credentials:", credentialsPath);
+console.log("¿Existe credentials?", fs.existsSync(credentialsPath));
+
 if (fs.existsSync(credentialsPath)) {
+    console.log("➡️ Usando credentials.json");
     auth = new google.auth.GoogleAuth({
         keyFile: credentialsPath,
         scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
     });
 } else {
-    // Si no existe (Render)
+    console.log("➡️ Usando variables de entorno");
     auth = new google.auth.GoogleAuth({
         credentials: {
             type: process.env.GOOGLE_TYPE,
             project_id: process.env.GOOGLE_PROJECT_ID,
             private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
-            private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
             client_email: process.env.GOOGLE_CLIENT_EMAIL,
             client_id: process.env.GOOGLE_CLIENT_ID,
             auth_uri: process.env.GOOGLE_AUTH_URI,
