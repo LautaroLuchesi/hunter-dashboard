@@ -479,3 +479,35 @@ thead {
     align-items: stretch;
 }
 
+@media (max-width:768px){
+
+.turnos-container{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.turno-card{
+
+    width:100%;
+
+}
+
+.cards-container{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.total-diario-card,
+.presentismo-card{
+
+    width:100%;
+
+}
+
+}

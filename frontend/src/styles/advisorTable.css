@@ -214,3 +214,20 @@
 
     color: white;
 }
+
+@media (max-width:768px){
+
+.advisor-table{
+
+    font-size:12px;
+
+}
+
+.advisor-table th,
+.advisor-table td{
+
+    padding:6px;
+
+}
+
+}

@@ -9,3 +9,15 @@
     width:100%;
 
 }
+
+@media (max-width:768px){
+
+.general-kpi{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+}

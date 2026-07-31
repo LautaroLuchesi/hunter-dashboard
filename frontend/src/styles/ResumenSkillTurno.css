@@ -194,3 +194,25 @@
     font-weight: 750;
 
 }
+
+@media (max-width:768px){
+
+.resumen-header{
+
+    font-size:17px;
+
+}
+
+.resumen-body{
+
+    padding:16px;
+
+}
+
+.resumen-item strong{
+
+    font-size:22px;
+
+}
+
+}
