@@ -16,7 +16,7 @@
 
     overflow: hidden;
 
-    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
 
 
 }
@@ -87,6 +87,7 @@
 .turno-card:hover {
 
     transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
 
 }
 
@@ -150,7 +151,7 @@ thead {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 28px rgba(30, 58, 138, .12);
+    box-shadow: 0 14px 32px rgba(30, 58, 138, .15);
 
 }
 
@@ -221,7 +222,7 @@ thead {
 
     border-radius: 22px;
 
-    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
 }
 
 /* ===========================
@@ -242,7 +243,7 @@ thead {
 
     overflow: hidden;
 
-    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
 
     transition:
         transform .25s ease,
@@ -254,7 +255,7 @@ thead {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 12px 28px rgba(30, 58, 138, .12);
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
 
 }
 
@@ -321,7 +322,7 @@ thead {
 
 .total-item strong {
 
-    color: #5977a3;
+    color:#1e3a8a;
 
     font-size: 28px;
 
@@ -349,7 +350,7 @@ thead {
 
     border-top:2px solid #d7e4ff;
 
-    color: #5977a3;
+    color:#1e3a8a;
 
 }
 

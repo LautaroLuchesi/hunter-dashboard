@@ -1,127 +1,216 @@
-.advisor-table{
+.advisor-table {
+
     width: 100%;
+
     border-collapse: collapse;
-    background: #fff;
-    border: 2px solid #1f2937;
-    border-radius: 8px;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
+
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+
     font-size: 14px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
 }
 
-.advisor-table thead{
+.advisor-table:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 14px 32px rgba(30,58,138,.15);
+
+}
+
+.advisor-table thead {
+
     background: #1e3a8a;
+
     color: white;
 }
 
-.advisor-table th{
-    padding: 10px 8px;
-    text-align: center;
+.advisor-table th {
+
+    padding: 12px 8px;
+
     font-weight: 700;
-    white-space: nowrap;
+
+    font-size: 13px;
+
 }
 
-.advisor-table td{
+.advisor-table td {
+
     padding: 8px;
+
     text-align: center;
-    border-bottom: 1px solid #e5e7eb;
+
+    border-bottom: 1px solid #edf2fb;
+
 }
 
-.advisor-table td:nth-child(2){
+.advisor-table td:nth-child(2) {
+
     text-align: center;
+
     font-weight: 500;
 
 }
 
-.advisor-table tbody tr:nth-child(even){
-    background:#f8fafc;
+.advisor-table tbody tr:nth-child(even) {
+
+    background: #ffffff;
+
 }
 
-.advisor-table tbody tr:hover{
-    background:#dbeafe;
-    transition:.2s;
+.advisor-table tbody tr:hover {
+
+    background:#e3efff;
+
+    transition: .2s;
+
 }
 
 .advisor-table tbody tr.fila-total {
-    background: #dce9ff;
+
+    background: #eef4ff;
+
     font-weight: bold;
+
 }
 
 .advisor-table tbody tr.fila-total td {
-    border-top: 2px solid #294596;
+
+    border-top: 2px solid #c7d8ff;
+
     color: #294596;
+
 }
 
 .advisor-table tbody tr.fila-total-general {
-    background: #294596;
+
+    background: #c7d8ff;
+
     font-weight: bold;
+
 }
 
 .advisor-table tbody tr.fila-total-general td {
+
     border-top: 2px solid white;
+
     color: white;
+
 }
 
-.estado{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
+.estado {
 
-    width:28px;
-    height:28px;
+    display: inline-flex;
 
-    border-radius:6px;
+    justify-content: center;
 
-    font-weight:bold;
-    color:white;
+    align-items: center;
+
+    border-radius: 999px;
+
+    padding: 0 10px;
+
+    width: auto;
+
+    min-width: 28px;
+
+    height: 28px;
+
+    font-weight: bold;
+
+    color: white;
+
 }
 
-.estado-P{
-    background:#22c55e;
+.estado-P {
+
+    background: #22c55e;
+
 }
 
-.estado-A{
-    background:#ef4444;
+.estado-A {
+
+    background: #ef4444;
+
 }
 
-.estado-V{
-    background:#facc15;
-    color:#111827;
+.estado-V {
+
+    background: #facc15;
+
+    color: #111827;
+
 }
 
-.conv-verde{
-    color:#16a34a;
-    font-weight:bold;
+.conv-verde {
+
+    color: #16a34a;
+
+    font-weight: bold;
+
 }
 
-.conv-amarillo{
-    color:#ca8a04;
-    font-weight:bold;
+.conv-amarillo {
+
+    color: #ca8a04;
+
+    font-weight: bold;
+
 }
 
-.conv-rojo{
-    color:#dc2626;
-    font-weight:bold;
+.conv-rojo {
+
+    color: #dc2626;
+
+    font-weight: bold;
+
 }
 
 .fila-total {
-    background: #dce9ff;
+
+    background: #eef4ff;
+
     font-weight: bold;
+
     color: #294596;
+
 }
 
 .fila-total td {
-    border-top: 2px solid #294596;
+
+    border-top: 2px solid #c7d8ff;
+
     color: #294596;
+
 }
 
 .fila-total-general {
-    background: #294596;
+
+    background: linear-gradient(90deg,
+            #1d4ed8,
+            #2563eb);
     font-weight: bold;
+
     color: white;
+
 }
 
 .fila-total-general td {
+
     border-top: 2px solid white;
+
     color: white;
 }
