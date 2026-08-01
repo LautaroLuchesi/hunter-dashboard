@@ -10,7 +10,7 @@ import { skills } from "../config/skills";
 import SkillTable from "../components/SkillTable";
 import { agruparAsesores } from "../utils/advisorUtils";
 import logoGout from "../assets/Logo_gout.png";
-import logoHunter from "../assets/Logo_upselling.png";
+import logoHunter from "../assets/Logo_hunter.png";
 
 function Dashboard() {
 
