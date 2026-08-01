@@ -15,7 +15,9 @@
     box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
 
     font-size: 14px;
-
+    
+    min-width:950px;
+    
     transition:
         transform .25s ease,
         box-shadow .25s ease;
@@ -229,5 +231,15 @@
     padding:6px;
 
 }
+
+}
+
+.advisor-table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
 
 }

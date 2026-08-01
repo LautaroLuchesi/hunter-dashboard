@@ -24,6 +24,8 @@ body{
 
     padding:25px;
 
+    box-sizing:border-box
+
 }
 
 .dashboard-header h1{
@@ -146,10 +148,11 @@ body{
    RESPONSIVE
 =========================== */
 
-@media (max-width: 768px){
+@media (max-width: 900px){
 
 .dashboard{
-    padding:12px;
+    max-width:100%;
+    padding:10px;
 }
 
 .dashboard-header{
