@@ -14,7 +14,7 @@
 
     border-radius: 22px;
 
-    overflow: hidden;
+    overflow: auto;
 
     box-shadow: 0 14px 32px rgba(30,58,138,.15);
 
@@ -231,7 +231,9 @@ thead {
 
 .total-diario-card {
 
-    width: 430px;
+    width:100%;
+
+    max-width:430px;
 
     margin: 10px auto 25px;
 
