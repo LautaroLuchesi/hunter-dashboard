@@ -6,11 +6,11 @@ function parseInboundHour(filas) {
 
     filas.slice(1).forEach((fila) => {
 
-        const fecha = fila[0];
+        const fecha = fila[1];
 
         const hora = Number(fila[16]);
 
-        const asesor = parseAdvisor(fila[4]);
+        const asesor = parseAdvisor(fila[0]);
 
         if (!fecha || !hora || !asesor) {
             return;

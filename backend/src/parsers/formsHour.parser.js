@@ -10,7 +10,7 @@ function parseFormsHour(filas) {
 
         const hora = Number(fila[10]);
 
-        const asesor = parseAdvisor(fila[1]);
+        const asesor = parseAdvisor(fila[4]);
 
         if (!fecha || !hora || !asesor) {
             return;
