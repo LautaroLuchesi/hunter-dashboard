@@ -1,4 +1,5 @@
 const { parseAdvisor } = require("../utils/advisorParser");
+const { normalizeDate } = require("../utils/dateParser");
 
 function parseGoogleHour(filas) {
 
@@ -6,11 +7,11 @@ function parseGoogleHour(filas) {
 
     filas.slice(1).forEach((fila) => {
 
-        const fecha = fila[0];
+        const fecha = normalizeDate(fila[1]);
 
         const hora = Number(fila[2]);
 
-        const asesor = parseAdvisor(fila[1]);
+        const asesor = parseAdvisor(fila[12]);
 
         if (!fecha || !hora || !asesor) {
             return;

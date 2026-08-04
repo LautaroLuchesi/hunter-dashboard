@@ -30,24 +30,60 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
     const google = parseGoogleHour(googleSheet);
 
+    console.log(
+        google
+            .filter(r => String(r.fecha).includes("31"))
+            .slice(0, 20)
+    );
+
     const facebook = parseFacebookHour(facebookSheet);
+
+    console.log(
+        facebook
+            .filter(r => String(r.fecha).includes("31"))
+            .slice(0, 20)
+    );
 
     const forms = parseFormsHour(formsSheet);
 
-    console.log("Inbound:", inbound.length);
-    console.log("Google:", google.length);
-    console.log("Facebook:", facebook.length);
-    console.log("Forms:", forms.length);
+    console.log(
+        forms
+            .filter(r => String(r.fecha).includes("31"))
+            .slice(0, 20)
+    );
 
-    console.log(inbound.slice(0, 5));
 
-    const fechas = [
-        ...new Set(
-            inbound.map(r => r.fecha)
-        )
-    ].sort();
+    const fechas = [...new Set(inbound.map(r => r.fecha))]
+        .sort((a, b) => {
 
-    const fechaFinal = fechaSeleccionada || fechas[0];
+            const [diaA, mesA, anioA] = a.split("/");
+            const [diaB, mesB, anioB] = b.split("/");
+
+            return (
+                new Date(`${anioA}-${mesA}-${diaA}`) -
+                new Date(`${anioB}-${mesB}-${diaB}`)
+            );
+
+        });
+
+    const fechaFinal = fechaSeleccionada || fechas[fechas.length - 1];
+
+    console.log("Fecha:", fechaFinal);
+
+    console.log(
+        "Google:",
+        google.filter(r => r.fecha === fechaFinal).length
+    );
+
+    console.log(
+        "Facebook:",
+        facebook.filter(r => r.fecha === fechaFinal).length
+    );
+
+    console.log(
+        "Forms:",
+        forms.filter(r => r.fecha === fechaFinal).length
+    );
 
     const grafico = buildHourlyReport({
 

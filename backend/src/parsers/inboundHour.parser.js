@@ -1,4 +1,5 @@
 const { parseAdvisor } = require("../utils/advisorParser");
+const { normalizeDate } = require("../utils/dateParser");
 
 function parseInboundHour(filas) {
 
@@ -6,7 +7,7 @@ function parseInboundHour(filas) {
 
     filas.slice(1).forEach((fila) => {
 
-        const fecha = fila[1];
+        const fecha = normalizeDate(fila[1]);
 
         const hora = Number(fila[16]);
 
