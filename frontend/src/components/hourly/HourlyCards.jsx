@@ -14,6 +14,7 @@ function HourlyCards({ grafico }) {
             title: "Inbound",
             value: totalInbound,
             color: "#2563eb"
+            
         },
         {
             title: "Google",
@@ -45,33 +46,26 @@ function HourlyCards({ grafico }) {
     return (
 
         <div className="hourly-cards">
-
             {cards.map((card) => (
-
                 <div
                     key={card.title}
                     className="hourly-card"
                 >
-
                     <span className="hourly-card-title">
-
                         {card.title}
-
                     </span>
 
-                    <h2
-                        className="hourly-card-value"
-                        style={{ color: card.color }}
-                    >
-
-                        {card.value}
-
-                    </h2>
+                    <div className="hourly-card-box">
+                        <h2
+                            className="hourly-card-value"
+                            style={{ color: card.color }}
+                        >
+                            {card.value}
+                        </h2>
+                    </div>
 
                 </div>
-
             ))}
-
         </div>
 
     );

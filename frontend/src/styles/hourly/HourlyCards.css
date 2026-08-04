@@ -1,0 +1,95 @@
+.hourly-cards{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+    margin-top:30px;
+}
+
+.hourly-card{
+    background:#edf4ff;
+    border:1px solid #c8dbff;
+    border-radius:22px;
+
+    padding:16px;
+
+    min-height:110px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 8px 18px rgba(34,67,155,.10);
+}
+
+.hourly-card-title{
+    font-size:16px;
+    font-weight:700;
+    color:#2b3d5f;
+}
+
+.hourly-card-box{
+    width:100%;
+    height:52px;
+
+    background:#f8fbff;
+
+    border:1px solid #c8dbff;
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 6px 12px rgba(34,67,155,.08);
+}
+
+.hourly-card-value{
+    margin:0;
+    font-size:26px;
+    font-weight:700;
+}
+
+
+.hourly-card:hover{
+    transform: translateY(-4px);
+}
+
+.hourly-card h3{
+    font-size:18x;
+    color:#1f3f96;
+    font-weight:600;
+    margin:0;
+}
+
+.hourly-card span{
+    font-size:30px;
+    font-weight:700;
+    color:#20439b;
+}
+
+
+
+@media (max-width:1500px){
+
+    .hourly-cards{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media (max-width:900px){
+
+    .hourly-cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media (max-width:600px){
+
+    .hourly-cards{
+        grid-template-columns:1fr;
+    }
+
+}
