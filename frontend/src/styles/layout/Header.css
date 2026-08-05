@@ -1,0 +1,155 @@
+.app-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:60px;
+
+}
+
+.app-header-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.app-header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.app-header-logos{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.dashboard-logo{
+
+    width:62px;
+
+    height:62px;
+
+    object-fit:contain;
+
+}
+
+.app-company{
+
+    display:block;
+
+    color:#4b68b8;
+
+    letter-spacing:5px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    margin-bottom:2px;
+
+}
+
+.app-title{
+
+    margin:0;
+
+    color:#1f429b;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    text-shadow:2px 2px 0 rgba(0,0,0,.08);
+
+    line-height:1;
+
+}
+
+.app-subtitle{
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
+
+.header-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 22px;
+
+    background:#1f429b;
+
+    color:white;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+    box-shadow:0 8px 20px rgba(31,66,155,.25);
+
+}
+
+.header-button:hover{
+
+    transform:translateY(-2px);
+
+    background:#17347d;
+
+}
+
+.app-title-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.header-date{
+
+    padding:8px 14px;
+
+    background:#eef4ff;
+
+    border:1px solid #c7d8ff;
+
+    border-radius:999px;
+
+    color:#1f429b;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}

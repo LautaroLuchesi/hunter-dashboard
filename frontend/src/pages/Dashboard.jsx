@@ -12,6 +12,7 @@ import { agruparAsesores } from "../utils/advisorUtils";
 import logoGout from "../assets/Logo_gout.png";
 import logoHunter from "../assets/Logo_hunter.png";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/layout/Header";
 
 function Dashboard() {
 
@@ -46,55 +47,15 @@ function Dashboard() {
         return <h2>Error al cargar los datos.</h2>;
     };
 
-    console.log("Fechas:", fechas);
-    console.log("Primera:", fechas[0]);
-
     return (
 
         <div className="dashboard">
 
-            <header className="dashboard-header">
-
-                <div className="dashboard-logos">
-
-                    <img
-                        src={logoGout}
-                        alt="GOUT"
-                        className="dashboard-logo"
-                    />
-
-                    <img
-                        src={logoHunter}
-                        alt="Hunter"
-                        className="dashboard-logo"
-                    />
-
-                </div>
-
-                <div className="dashboard-title-group">
-
-                    <span className="dashboard-company">
-                        GOUT ARGENTINA
-                    </span>
-
-                    <h1>
-                        Seguimiento Hunter Uruguay
-                    </h1>
-
-                </div>
-
-                <div className="dashboard-actions">
-
-                    <button
-                        className="hourly-report-button"
-                        onClick={() => navigate("/hourly-report")}
-                    >
-                        📈 Ver reporte por hora
-                    </button>
-
-                </div>
-
-            </header>
+            <Header
+                title="Seguimiento Hunter Uruguay"
+                buttonText="📈 Reporte por Hora"
+                buttonLink="/hourly-report"
+            />
 
             <section className="dashboard-section">
 

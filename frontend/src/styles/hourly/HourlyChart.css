@@ -31,3 +31,7 @@
 .hourly-chart {
     height: 420px;
 }
+
+.hourly-chart-card{
+    padding: 32px;
+}
