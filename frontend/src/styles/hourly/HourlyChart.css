@@ -1,0 +1,33 @@
+.hourly-chart-container {
+
+    margin-top: 40px;
+
+    background: #eef4ff;
+
+    border: 1px solid #c8dbff;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 20px rgba(30, 70, 170, .08);
+
+}
+
+.hourly-chart-title {
+
+    margin: 0 0 25px;
+
+    color: #21439c;
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+}
+
+.hourly-chart {
+    height: 420px;
+}

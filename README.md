@@ -2,5 +2,5 @@
 git init
 git status
 git add .
-git commit -m "Mejorando colores y animaciones"
+git commit -m "Agregando selector de fecha y primer grafico"
 git push origin develop

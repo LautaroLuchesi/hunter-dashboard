@@ -14,6 +14,7 @@
 
     overflow-x: auto;
     scrollbar-width: none;
+    justify-content: center;
 }
 
 .date-selector::-webkit-scrollbar {
@@ -103,7 +104,7 @@
 
 .day-button {
 
-    min-width: 42px;
+    min-width: 39px;
     height: 42px;
 
     border: none;

@@ -11,8 +11,11 @@ import SkillTable from "../components/SkillTable";
 import { agruparAsesores } from "../utils/advisorUtils";
 import logoGout from "../assets/Logo_gout.png";
 import logoHunter from "../assets/Logo_hunter.png";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+
+    const navigate = useNavigate();
 
     const [fechaSeleccionada, setFechaSeleccionada] = useState("");
 
@@ -30,7 +33,7 @@ function Dashboard() {
     useEffect(() => {
 
         if (fechas.length > 0 && !fechaSeleccionada) {
-            setFechaSeleccionada(fechas[0]);
+            setFechaSeleccionada(fechas[fechas.length - 1]);
         }
 
     }, [fechas, fechaSeleccionada]);
@@ -42,6 +45,9 @@ function Dashboard() {
     if (error) {
         return <h2>Error al cargar los datos.</h2>;
     };
+
+    console.log("Fechas:", fechas);
+    console.log("Primera:", fechas[0]);
 
     return (
 
@@ -74,6 +80,17 @@ function Dashboard() {
                     <h1>
                         Seguimiento Hunter Uruguay
                     </h1>
+
+                </div>
+
+                <div className="dashboard-actions">
+
+                    <button
+                        className="hourly-report-button"
+                        onClick={() => navigate("/hourly-report")}
+                    >
+                        📈 Ver reporte por hora
+                    </button>
 
                 </div>
 

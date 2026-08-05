@@ -18,7 +18,7 @@ body{
 
     width:100%;
 
-    max-width:1350px;
+    max-width:1400px;
 
     margin:0 auto;
 
@@ -118,7 +118,7 @@ body{
 
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
-    gap:24px;
+    gap:44px;
 
     align-items:start;
 
@@ -141,6 +141,43 @@ body{
     font-weight:600;
 
     color:#1f2937;
+
+}
+
+.dashboard-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:16px;
+
+}
+
+.hourly-report-button{
+
+    background:#1e40af;
+    color:white;
+
+    border:none;
+    border-radius:14px;
+
+    padding:12px 22px;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 8px 20px rgba(30,64,175,.25);
+
+}
+
+.hourly-report-button:hover{
+
+    transform:translateY(-2px);
+
+    background:#2563eb;
 
 }
 
