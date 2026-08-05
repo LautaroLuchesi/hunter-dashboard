@@ -7,6 +7,8 @@ import HourlyHeader from "../components/hourly/HourlyHeader";
 import HourlyCards from "../components/hourly/HourlyCards";
 import HourlyChart from "../components/hourly/HourlyChart";
 import DateSelector from "../components/DateSelector";
+import Header from "../components/layout/Header";
+import { FiArrowLeft } from "react-icons/fi";
 
 function HourlyReport() {
 
@@ -45,7 +47,17 @@ function HourlyReport() {
 
         <div className="hourly-page">
 
-            <HourlyHeader fecha={data.fecha} />
+            <Header
+                title="Reporte por Hora"
+                date={data.fecha}
+                buttonText={
+                    <>
+                        <FiArrowLeft />
+                        <span>Dashboard</span>
+                    </>
+                }
+                buttonLink="/"
+            />
 
             <DateSelector
                 fechas={data.fechas}

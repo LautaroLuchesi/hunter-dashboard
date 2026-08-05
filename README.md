@@ -2,5 +2,5 @@
 git init
 git status
 git add .
-git commit -m "Agregando selector de fecha y primer grafico"
+git commit -m "Unificando header y agregando asesores a grafico por hora"
 git push origin develop

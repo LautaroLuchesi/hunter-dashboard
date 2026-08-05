@@ -14,7 +14,7 @@ function HourlyCards({ grafico }) {
             title: "Inbound",
             value: totalInbound,
             color: "#2563eb"
-            
+
         },
         {
             title: "Google",
@@ -51,6 +51,11 @@ function HourlyCards({ grafico }) {
                     key={card.title}
                     className="hourly-card"
                 >
+                    <div
+                        className="hourly-card-top"
+                        style={{ backgroundColor: card.color }}
+                    />
+
                     <span className="hourly-card-title">
                         {card.title}
                     </span>
@@ -63,10 +68,10 @@ function HourlyCards({ grafico }) {
                             {card.value}
                         </h2>
                     </div>
-
                 </div>
-            ))}
-        </div>
+    ))
+}
+        </div >
 
     );
 

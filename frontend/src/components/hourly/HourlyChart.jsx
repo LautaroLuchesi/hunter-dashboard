@@ -21,7 +21,7 @@ function HourlyChart({ data }) {
                 Contactos por Hora
             </h2>
 
-            <ResponsiveContainer width="100%" height={420}>
+            <ResponsiveContainer width="100%" height={600}>
 
                 <LineChart
                     data={data}
@@ -86,6 +86,15 @@ function HourlyChart({ data }) {
                         stroke="#0f172a"
                         strokeDasharray="6 4"
                         strokeWidth={4}
+                    />
+
+                    <Line
+                        type="monotone"
+                        dataKey="asesores"
+                        name="Asesores"
+                        stroke="#e53935"
+                        strokeWidth={3}
+                        dot={{ r: 4 }}
                     />
 
                 </LineChart>
