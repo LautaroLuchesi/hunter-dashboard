@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/date-selector.css";
 import { FiCalendar } from "react-icons/fi";
+import { parseDate } from "../utils/dateUtils";
 
 function DateSelector({ fechas, fecha, onChange }) {
 
@@ -9,7 +10,7 @@ function DateSelector({ fechas, fecha, onChange }) {
     useEffect(() => {
 
         if (fecha) {
-            setMesActual(new Date(fecha));
+            setMesActual(parseDate(fecha));
         }
 
     }, [fecha]);
@@ -26,9 +27,9 @@ function DateSelector({ fechas, fecha, onChange }) {
         ...new Set(
             fechas.map((f) => {
 
-                const fecha = new Date(f);
+                const fechaTemp = parseDate(f);
 
-                return `${fecha.getFullYear()}-${fecha.getMonth()}`;
+                return `${fechaTemp.getFullYear()}-${fechaTemp.getMonth()}`;
 
             })
         )
@@ -40,7 +41,7 @@ function DateSelector({ fechas, fecha, onChange }) {
 
     const fechasDelMes = fechas.filter((f) => {
 
-        const fechaTemp = new Date(f);
+        const fechaTemp = parseDate(f);
 
         return (
             fechaTemp.getFullYear() === anio &&
@@ -121,10 +122,12 @@ function DateSelector({ fechas, fecha, onChange }) {
 
                 {fechasDelMes.map((f) => {
 
-                    const dia = Number(f.split("-")[2]);
+                    const fechaTemp = parseDate(f);
+
+                    const dia = fechaTemp.getDate();
 
                     const esHoy =
-                        new Date(f).toDateString() === new Date().toDateString();
+                        fechaTemp.toDateString() === new Date().toDateString();
 
                     return (
 

@@ -2,5 +2,5 @@
 git init
 git status
 git add .
-git commit -m "Mejorando kpis de la segunda pestaña"
+git commit -m "Agregando selector de fecha y primer grafico"
 git push origin develop

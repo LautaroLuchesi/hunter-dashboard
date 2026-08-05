@@ -5,10 +5,13 @@ import "../styles/hourly/HourlyCards.css";
 import "../styles/hourly/HourlyHeader.css";
 import HourlyHeader from "../components/hourly/HourlyHeader";
 import HourlyCards from "../components/hourly/HourlyCards";
+import HourlyChart from "../components/hourly/HourlyChart";
+import DateSelector from "../components/DateSelector";
 
 function HourlyReport() {
 
     const [data, setData] = useState(null);
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
 
     useEffect(() => {
 
@@ -16,7 +19,7 @@ function HourlyReport() {
 
             try {
 
-                const reporte = await getHourlyReport();
+                const reporte = await getHourlyReport(fechaSeleccionada);
 
                 setData(reporte);
 
@@ -30,7 +33,7 @@ function HourlyReport() {
 
         cargarDatos();
 
-    }, []);
+    }, [fechaSeleccionada]);
 
     if (!data) {
 
@@ -42,21 +45,25 @@ function HourlyReport() {
 
         <div className="hourly-page">
 
-            <HourlyHeader
-                fecha={data.fecha}
+            <HourlyHeader fecha={data.fecha} />
 
+            <DateSelector
+                fechas={data.fechas}
+                fecha={data.fecha}
+                onChange={setFechaSeleccionada}
             />
 
             <HourlyCards
                 grafico={data.grafico}
             />
 
+            <HourlyChart
+                data={data.grafico}
+            />
+
         </div>
 
-
-
     );
-
 }
 
 export default HourlyReport;
