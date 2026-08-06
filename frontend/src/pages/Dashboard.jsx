@@ -61,7 +61,7 @@ function Dashboard() {
                         <span>Reporte por Hora</span>
                     </>
                 }
-                buttonLink="/hourly"
+                buttonLink="/hourly-report"
             />
 
             <section className="dashboard-section">
