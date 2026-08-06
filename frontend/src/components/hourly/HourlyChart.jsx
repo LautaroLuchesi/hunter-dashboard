@@ -21,7 +21,7 @@ function HourlyChart({ data }) {
                 Contactos por Hora
             </h2>
 
-            <ResponsiveContainer width="100%" height={600}>
+            <ResponsiveContainer width="100%" height={500}>
 
                 <LineChart
                     data={data}
@@ -37,7 +37,10 @@ function HourlyChart({ data }) {
 
                     <XAxis dataKey="hora" />
 
-                    <YAxis />
+                    <YAxis
+                        domain={[0, 45]}
+                        ticks={[0, 10, 20, 30, 40, 50]}
+                    />
 
                     <Tooltip />
 

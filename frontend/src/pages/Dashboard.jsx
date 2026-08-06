@@ -13,6 +13,7 @@ import logoGout from "../assets/Logo_gout.png";
 import logoHunter from "../assets/Logo_hunter.png";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/layout/Header";
+import { FiBarChart2 } from "react-icons/fi";
 
 function Dashboard() {
 
@@ -53,8 +54,14 @@ function Dashboard() {
 
             <Header
                 title="Seguimiento Hunter Uruguay"
-                buttonText="📈 Reporte por Hora"
-                buttonLink="/hourly-report"
+                date={fechaSeleccionada}
+                buttonText={
+                    <>
+                        <FiBarChart2 />
+                        <span>Reporte por Hora</span>
+                    </>
+                }
+                buttonLink="/hourly"
             />
 
             <section className="dashboard-section">

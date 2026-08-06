@@ -1,7 +1,14 @@
 .hourly-page{
-    min-height:100vh;
-    background:#f5f7fb;
-    padding:40px;
+    max-width: 1300px;   /* Probá entre 1400 y 1600 */
+
+    margin: 0 auto;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    padding-bottom: 20px;
+
 }
 
 .hourly-header{
@@ -63,4 +70,9 @@
 .hourly-card span{
     font-size:52px;
     font-weight:700;
+}
+
+.hourly-cards-wrapper{
+    max-width: 1500px;   /* probá entre 1450 y 1550 */
+    margin: 30px auto 0;
 }
