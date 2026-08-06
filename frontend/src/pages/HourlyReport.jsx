@@ -65,16 +65,19 @@ function HourlyReport() {
                 onChange={setFechaSeleccionada}
             />
 
-            <HourlyCards
-                grafico={data.grafico}
-            />
+            <div className="hourly-cards-wrapper">
+
+                <HourlyCards
+                    grafico={data.grafico}
+                />
+
+            </div>
 
             <HourlyChart
                 data={data.grafico}
             />
 
         </div>
-
     );
 }
 

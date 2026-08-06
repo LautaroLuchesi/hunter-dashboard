@@ -68,9 +68,7 @@
     color: #20439b;
 }
 
-
-
-@media (max-width:1500px) {
+@media (max-width:1200px) {
 
     .hourly-cards {
         grid-template-columns: repeat(3, 1fr);
@@ -78,7 +76,7 @@
 
 }
 
-@media (max-width:900px) {
+@media (max-width:768px) {
 
     .hourly-cards {
         grid-template-columns: repeat(2, 1fr);
@@ -86,7 +84,7 @@
 
 }
 
-@media (max-width:600px) {
+@media (max-width:480px) {
 
     .hourly-cards {
         grid-template-columns: 1fr;
