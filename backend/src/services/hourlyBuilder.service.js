@@ -75,23 +75,14 @@ function buildHourlyReport({
         const asesores = asesoresUnicos.size * 7;
 
         return {
-
             hora,
-            
             asesores,
-
             inbound: inboundCount,
-
             google: googleCount,
-
             facebook: facebookCount,
-
             botmaker,
-
             forms: formsCount,
-
             totales
-
         };
     });
 
@@ -99,6 +90,47 @@ function buildHourlyReport({
 
 }
 
-module.exports = {
-    buildHourlyReport
-};
+function buildHourlyAdvisorReport({
+    inbound,
+    google,
+    facebook,
+    forms,
+    presentismo,
+    fecha
+}) {
+
+    const registros = [
+        ...inbound,
+        ...google,
+        ...facebook,
+        ...forms
+    ].filter(registro => registro.fecha === fecha);
+
+    const presentismoMap = new Map();
+
+    presentismo.forEach((registro) => {
+
+        if (!presentismoMap.has(registro.idAsesor)) {
+
+            presentismoMap.set(registro.idAsesor, {
+
+                nombre: registro.nombreAsesor,
+
+                turno: registro.turno
+
+            });
+
+        }
+
+    });
+
+    console.log("Registros:", registros.length);
+
+    console.log(
+        presentismoMap.get("1354")
+    );
+
+    return [];
+
+}
+
