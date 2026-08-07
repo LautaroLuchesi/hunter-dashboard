@@ -1,12 +1,13 @@
 .advisor-table-container {
-    /*margin-top: 35px;*/
+    margin-top: 60px;
     background: white;
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 8px 18px rgba(34, 67, 155, .10);
     width: 100%;
     min-width: 0;
-    overflow: hidden;
+    max-width: 570px;
+
 }
 
 .advisor-table-title {
@@ -60,7 +61,7 @@
     /*transform: scale(1.005);*/
     box-shadow: inset 4px 0 0 #2954d1;
 }
-
+ 
 .advisor-table-row span:nth-child(2) {
     transition: color .25s;
     font-weight: 500;
@@ -80,17 +81,26 @@
 
 .advisor-table {
 
-    width: 100%;
-
     max-height: 620px;
 
-    overflow-y: auto;
+    width: 100%;
 
-}
+    border-collapse: collapse;
 
-.advisor-section{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-    margin-top:35px;
+    background: #ffffff;
+
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
+
+    overflow: auto;
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+
+    font-size: 14px;
+    
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
 }

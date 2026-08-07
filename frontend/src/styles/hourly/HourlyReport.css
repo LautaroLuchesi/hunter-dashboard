@@ -82,5 +82,6 @@
     grid-template-columns:1fr 1fr;
 
     gap:30px;
+    
+    max-width: 1300px;   /* probá entre 1450 y 1550 */
 }
-

@@ -62,7 +62,7 @@ function AdvisorDetail({ asesor }) {
             <div
                 style={{
                     width: "100%",
-                    height: 320,
+                    height: 270,
                     overflow: "hidden"
                 }}
             >
