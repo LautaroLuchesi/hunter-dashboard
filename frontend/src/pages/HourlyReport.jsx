@@ -9,11 +9,14 @@ import HourlyChart from "../components/hourly/HourlyChart";
 import DateSelector from "../components/DateSelector";
 import Header from "../components/layout/Header";
 import { FiArrowLeft } from "react-icons/fi";
+import AdvisorTable from "../components/hourly/AdvisorTable";
+import AdvisorDetail from "../components/hourly/AdvisorDetail";
 
 function HourlyReport() {
 
     const [data, setData] = useState(null);
     const [fechaSeleccionada, setFechaSeleccionada] = useState(null);
+    const [asesorSeleccionado, setAsesorSeleccionado] = useState(null);
 
     useEffect(() => {
 
@@ -24,6 +27,12 @@ function HourlyReport() {
                 const reporte = await getHourlyReport(fechaSeleccionada);
 
                 setData(reporte);
+
+                if (reporte.asesores?.length) {
+
+                    setAsesorSeleccionado(reporte.asesores[0]);
+
+                }
 
             } catch (error) {
 
@@ -39,7 +48,7 @@ function HourlyReport() {
 
     if (!data) {
 
-        return <h2>Cargando...</h2>;
+        return <h2>Generando reporte...</h2>;
 
     }
 
@@ -76,6 +85,20 @@ function HourlyReport() {
             <HourlyChart
                 data={data.grafico}
             />
+
+            <div className="advisor-section">
+
+                <AdvisorTable
+                    asesores={data.asesores}
+                    asesorSeleccionado={asesorSeleccionado}
+                    onSelect={setAsesorSeleccionado}
+                />
+
+                <AdvisorDetail
+                    asesor={asesorSeleccionado}
+                />
+
+            </div>
 
         </div>
     );

@@ -35,6 +35,8 @@ const generateReport = async (fechaSeleccionada) => {
 
     const fi = parseVtaFi(vtaFiSheet);
 
+   
+
     const presentismo = parsePresentismo(presentismoSheet);
 
     const turnos = parseTurnos(turnosSheet);

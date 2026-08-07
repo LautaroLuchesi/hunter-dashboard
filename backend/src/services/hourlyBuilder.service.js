@@ -124,13 +124,63 @@ function buildHourlyAdvisorReport({
 
     });
 
-    console.log("Registros:", registros.length);
+    const asesores = {};
 
-    console.log(
-        presentismoMap.get("1354")
-    );
+    for (const registro of registros) {
 
-    return [];
+        if (!asesores[registro.idAsesor]) {
+
+            const info = presentismoMap.get(registro.idAsesor);
+
+            asesores[registro.idAsesor] = {
+
+                id: registro.idAsesor,
+
+                nombre: registro.nombreAsesor,
+
+                turno: info?.turno || "",
+
+                horas: {}
+
+            };
+
+        }
+
+        const hora = registro.hora;
+
+        asesores[registro.idAsesor].horas[hora] =
+            (asesores[registro.idAsesor].horas[hora] || 0) + 1;
+
+    }
+
+    Object.values(asesores).forEach((asesor) => {
+
+        asesor.horas = Array.from(
+
+            { length: 12 },
+
+            (_, i) => {
+
+                const hora = i + 9;
+
+                return {
+
+                    hora,
+
+                    datos: asesor.horas[hora] || 0
+
+                };
+
+            }
+
+        );
+
+    });
+
+    return Object.values(asesores);
 
 }
 
+module.exports = {
+    buildHourlyReport, buildHourlyAdvisorReport
+};

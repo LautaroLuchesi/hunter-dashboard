@@ -41,7 +41,7 @@ function Dashboard() {
     }, [fechas, fechaSeleccionada]);
 
     if (loading) {
-        return <h2>Cargando...</h2>;
+        return <h2>Generando reporte...</h2>;
     }
 
     if (error) {

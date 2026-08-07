@@ -2,5 +2,5 @@
 git init
 git status
 git add .
-git commit -m "Empezando backend de datos por hora por asesor"
+git commit -m "DEbug"
 git push origin develop
