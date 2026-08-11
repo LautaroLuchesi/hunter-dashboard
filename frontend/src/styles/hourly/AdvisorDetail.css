@@ -1,11 +1,11 @@
-.advisor-detail{
+.advisor-detail {
 
-    max-width:570px;
+    max-width: 570px;
     background: white;
     border-radius: 22px;
     padding: 25px;
     border: 1px solid #d8e4ff;
-    box-shadow: 0 8px 20px rgba(25,60,130,.08);
+    box-shadow: 0 8px 20px rgba(25, 60, 130, .08);
 
     width: 100%;
     min-width: 0;
@@ -30,7 +30,7 @@
     margin-bottom: 30px;
 }
 
-.advisor-detail-kpis > div {
+.advisor-detail-kpis>div {
     flex: 1;
     background: #edf4ff;
     border-radius: 16px;
@@ -112,28 +112,29 @@
     font-weight: 600;
 }
 
-.advisor-detail-kpis > div:nth-child(1),
-.advisor-detail-kpis > div:nth-child(3) {
+.advisor-detail-kpis>div:nth-child(1),
+.advisor-detail-kpis>div:nth-child(3) {
     transform: translateY(20px);
 }
 
-.advisor-detail-kpis > div:nth-child(1):hover,
-.advisor-detail-kpis > div:nth-child(3):hover {
+.advisor-detail-kpis>div:nth-child(1):hover,
+.advisor-detail-kpis>div:nth-child(3):hover {
     transform: translateY(10px);
 }
 
-.advisor-detail-kpis > div:nth-child(2) {
+.advisor-detail-kpis>div:nth-child(2) {
     box-shadow: 0 6px 16px rgba(41, 84, 209, .10);
 }
 
-.advisor-detail-kpis > div:nth-child(2) span {
+.advisor-detail-kpis>div:nth-child(2) span {
     color: #2954d1;
     font-weight: 800;
 }
 
 .advisor-detail-chart {
-    width: 100%;
+    width: 102%;
     height: 320px;
+    margin-left: -4%;
     margin-top: 10px;
     overflow: hidden;
 }

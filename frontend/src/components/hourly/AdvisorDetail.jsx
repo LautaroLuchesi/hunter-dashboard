@@ -85,7 +85,7 @@ function AdvisorDetail({ asesor }) {
                 </div>
 
                 <div className="advisor-detail-chart">
-                    <ResponsiveContainer width="100%" height={270}>
+                    <ResponsiveContainer width="100%" height={300}>
 
                         <LineChart
                             data={asesor.horas}
