@@ -38,18 +38,18 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
     const presentismo = parsePresentismo(presentismoSheet);
 
-    const fechas = [...new Set(inbound.map(r => r.fecha))]
-        .sort((a, b) => {
+    const fechas = [
+        ...new Set([
+            ...inbound.map(r => r.fecha),
+            ...google.map(r => r.fecha),
+            ...facebook.map(r => r.fecha),
+            ...forms.map(r => r.fecha)
+        ])
+    ].filter(Boolean).sort((a, b) => {
 
-            const [diaA, mesA, anioA] = a.split("/");
-            const [diaB, mesB, anioB] = b.split("/");
+        return new Date(a) - new Date(b);
 
-            return (
-                new Date(`${anioA}-${mesA}-${diaA}`) -
-                new Date(`${anioB}-${mesB}-${diaB}`)
-            );
-
-        });
+    });
 
     const presentismoMap = new Map();
 
