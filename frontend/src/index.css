@@ -55,15 +55,22 @@ body {
   background: #f3f4f6;
 }
 
-#root{
-    width:100%;
-    max-width:1600px;
-    margin:0 auto;
-    min-height:100svh;
-    display:flex;
-    flex-direction:column;
-    box-sizing:border-box;
-    padding:20px;
+#root {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    min-width: 0;
 }
 
 @media (max-width:768px){

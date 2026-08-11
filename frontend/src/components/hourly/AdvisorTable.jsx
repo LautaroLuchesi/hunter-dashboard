@@ -23,39 +23,39 @@ function AdvisorTable({
                 <div className="advisor-table-header">
 
                     <span>ID</span>
-
                     <span>Asesor</span>
-
                     <span>Turno</span>
-
                     <span>Actividad</span>
 
                 </div>
 
-                {asesores.map((asesor) => (
+                <div className="advisor-table-body">
 
-                    <div
-                        key={asesor.id}
-                        className={`advisor-table-row ${asesorSeleccionado?.id === asesor.id
-                            ? "selected"
-                            : ""
-                            }`}
-                        onClick={() => onSelect(asesor)}
-                    >
+                    {asesores.map((asesor) => (
 
-                        <span>{asesor.id}</span>
+                        <div
+                            key={asesor.id}
+                            className={`advisor-table-row ${asesorSeleccionado?.id === asesor.id
+                                ? "selected"
+                                : ""
+                                }`}
+                            onClick={() => onSelect(asesor)}
+                        >
 
-                        <span>{asesor.nombre}</span>
+                            <span>{asesor.id}</span>
 
-                        <span>{asesor.turno}</span>
+                            <span>{asesor.nombre}</span>
 
-                        <AdvisorMiniChart
-                            data={asesor.horas}
-                        />
+                            <span>{asesor.turno}</span>
 
-                    </div>
+                            <AdvisorMiniChart
+                                data={asesor.horas}
+                            />
 
-                ))}
+                        </div>
+
+                    ))}
+                </div>
 
             </div>
         </div>

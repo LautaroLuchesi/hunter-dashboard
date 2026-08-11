@@ -10,8 +10,10 @@ function AdvisorMiniChart({ data }) {
 
         <div
             style={{
-                width: 170,
-                height: 45
+                width: "100%",
+                maxWidth: 170,
+                height: 45,
+                minWidth: 0
             }}
         >
 

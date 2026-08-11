@@ -1,13 +1,15 @@
-.hourly-page{
-    max-width: 1300px;   /* Probá entre 1400 y 1600 */
+.hourly-page {
+    width: 100%;
+    max-width: 1300px;
 
     margin: 0 auto;
-
     padding: 10px;
 
     box-sizing: border-box;
 
     padding-bottom: 20px;
+
+    min-width: 0;
 }
 
 .hourly-header{
