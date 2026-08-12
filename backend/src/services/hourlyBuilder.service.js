@@ -3,32 +3,46 @@ function buildHourlyReport({
     google,
     facebook,
     forms,
-    fecha
+    fecha,
+    turnos
 }) {
-
+ 
     const horas = Array.from(
         { length: 12 },
         (_, i) => i + 9
     );
 
+    const turnosMap = new Map();
+
+    turnos.forEach((registro) => {
+        turnosMap.set(registro.idAsesor, registro.turno);
+    });
+
     const resultado = horas.map((hora) => {
 
         const inboundHora = inbound.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
+
 
         const inboundCount = inboundHora.length;
 
         const googleHora = google.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -37,9 +51,12 @@ function buildHourlyReport({
 
         const facebookHora = facebook.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -48,9 +65,12 @@ function buildHourlyReport({
 
         const formsHora = forms.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -96,15 +116,31 @@ function buildHourlyAdvisorReport({
     facebook,
     forms,
     presentismo,
+    turnos,
     fecha
 }) {
+
+    const turnosMap = new Map();
+
+    turnos.forEach((registro) => {
+        turnosMap.set(registro.idAsesor, registro.turno);
+    });
 
     const registros = [
         ...inbound,
         ...google,
         ...facebook,
         ...forms
-    ].filter(registro => registro.fecha === fecha);
+    ].filter((registro) => {
+
+        const turno = turnosMap.get(registro.idAsesor);
+
+        return (
+            registro.fecha === fecha &&
+            (turno === "TM" || turno === "TT")
+        );
+
+    });
 
     const presentismoMap = new Map();
 
