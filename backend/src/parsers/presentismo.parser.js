@@ -43,10 +43,11 @@ function parsePresentismo(filas) {
 
             estado: fila[2],
 
-            horas: Number(fila[3] || 0)
+            horas: Number(fila[3] || 0),
+
+            turno: fila[4] || ""
 
         });
-
     });
 
     return registros;

@@ -17,6 +17,7 @@ function HourlyChart({ data }) {
     const lineProps = {
         dot: {
             r: 3,
+            fill: "#ffffff",
             strokeWidth: 2
         },
         activeDot: {
@@ -65,7 +66,6 @@ function HourlyChart({ data }) {
                             fontWeight: 600
                         }}
                         tick={{ fill: "#1e3a8a", fontSize: 15, fontWeight: 600 }}
-                        tickLine={false}
                         tickFormatter={(hora) =>
                             `${hora.toString().padStart(2, "0")}:00`
                         }
@@ -73,8 +73,6 @@ function HourlyChart({ data }) {
                             stroke: "#9dbcf7",
                             strokeWidth: 2
                         }}
-                        axisLine={false}
-                        tickLine={false}
                     />
 
                     <YAxis
@@ -150,7 +148,6 @@ function HourlyChart({ data }) {
                         strokeWidth={4}
                         strokeDasharray="6 4"
                         name="botmaker"
-                        name="Botmaker"
                         {...lineProps}
                     />
 

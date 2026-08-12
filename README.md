@@ -2,5 +2,5 @@
 git init
 git status
 git add .
-git commit -m "mejorando estetica de grafico por hora"
+git commit -m "tabla de datos por asesores por hora"
 git push origin develop

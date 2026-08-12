@@ -70,18 +70,29 @@ function buildReport({ datos, ventas, fi, presentismo, turnos }) {
     return datos
         .map((registro) => {
 
-            const ventaKey = `${registro.fecha}|${registro.skill}|${registro.idAsesor}`;
+            const ventaKey =
+                `${registro.fecha}|${registro.skill}|${registro.idAsesor}`;
+
             const venta = ventasMap.get(ventaKey);
 
-            const fiKey = `${registro.fecha}|${registro.idAsesor}`;
+            const fiKey =
+                `${registro.fecha}|${registro.idAsesor}`;
+
             const fiRegistro = fiMap.get(fiKey);
 
-            const presente = presentismoMap.get(fiKey);
+            const presente =
+                presentismoMap.get(fiKey);
 
-            const turnoRegistro = turnosMap.get(registro.idAsesor);
+            const turnoRegistro =
+                turnosMap.get(registro.idAsesor);
 
-            // Si no existe en presentismo, no forma parte del reporte
-            if (!presente) {
+            // Mismo criterio que Datos por Hora:
+            // solamente operadores TM o TT
+            if (
+                !turnoRegistro ||
+                (turnoRegistro.turno !== "TM" &&
+                    turnoRegistro.turno !== "TT")
+            ) {
                 return null;
             }
 
@@ -89,23 +100,32 @@ function buildReport({ datos, ventas, fi, presentismo, turnos }) {
 
                 ...registro,
 
-                ventas: venta ? venta.ventas : 0,
+                ventas: venta
+                    ? venta.ventas
+                    : 0,
 
-                fi: fiRegistro ? fiRegistro.fi : 0,
+                fi: fiRegistro
+                    ? fiRegistro.fi
+                    : 0,
 
-                estado: presente.estado,
+                estado: presente
+                    ? presente.estado
+                    : "",
 
-                horas: presente.horas,
+                horas: presente
+                    ? presente.horas
+                    : 0,
 
-                turno: turnoRegistro
-                    ? turnoRegistro.turno
-                    : ""
+                turno: turnoRegistro.turno
 
             };
+
         })
         .filter(Boolean);
 
+
 }
+
 
 module.exports = {
     buildReport

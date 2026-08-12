@@ -1,11 +1,11 @@
 const googleSheetsService = require("./googleSheets.service");
-
 const { parseInboundHour } = require("../parsers/inboundHour.parser");
 const { parseGoogleHour } = require("../parsers/googleHour.parser");
 const { parseFacebookHour } = require("../parsers/facebookHour.parser");
 const { parseFormsHour } = require("../parsers/formsHour.parser");
-
-const { buildHourlyReport } = require("./hourlyBuilder.service");
+const { buildHourlyReport, buildHourlyAdvisorReport } = require("./hourlyBuilder.service");
+const { parsePresentismo } = require("../parsers/presentismo.parser");
+const { parseTurnos } = require("../parsers/turnos.parser");
 
 const generateHourlyReport = async (fechaSeleccionada) => {
 
@@ -13,7 +13,9 @@ const generateHourlyReport = async (fechaSeleccionada) => {
         inboundSheet,
         googleSheet,
         facebookSheet,
-        formsSheet
+        formsSheet,
+        presentismoSheet,
+        turnosSheet
     ] = await Promise.all([
 
         googleSheetsService.readSheet("Crudo_Inbound!A:Q"),
@@ -22,7 +24,11 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
         googleSheetsService.readSheet("Crudo_Facebook!A:M"),
 
-        googleSheetsService.readSheet("Crudo_Forms!A:K")
+        googleSheetsService.readSheet("Crudo_Forms!A:K"),
+
+        googleSheetsService.readSheet("PRESENTISMO!A:E"),
+
+        googleSheetsService.readSheet("PRESENTISMO!O:P")
 
     ]);
 
@@ -30,60 +36,49 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
     const google = parseGoogleHour(googleSheet);
 
-    console.log(
-        google
-            .filter(r => String(r.fecha).includes("31"))
-            .slice(0, 20)
-    );
-
     const facebook = parseFacebookHour(facebookSheet);
-
-    console.log(
-        facebook
-            .filter(r => String(r.fecha).includes("31"))
-            .slice(0, 20)
-    );
 
     const forms = parseFormsHour(formsSheet);
 
+    const presentismo = parsePresentismo(presentismoSheet);
+
+    const turnos = parseTurnos(turnosSheet);
+
+    const fechas = [
+        ...new Set([
+            ...inbound.map(r => r.fecha),
+            ...google.map(r => r.fecha),
+            ...facebook.map(r => r.fecha),
+            ...forms.map(r => r.fecha)
+        ])
+    ].filter(Boolean).sort((a, b) => {
+
+        return new Date(a) - new Date(b);
+
+    });
+
+    const presentismoMap = new Map();
+
+    presentismo.forEach((registro) => {
+
+        if (!presentismoMap.has(registro.idAsesor)) {
+
+            presentismoMap.set(registro.idAsesor, {
+
+                nombre: registro.nombreAsesor,
+
+                turno: registro.turno
+
+            });
+
+        }
+
+    });
     console.log(
-        forms
-            .filter(r => String(r.fecha).includes("31"))
-            .slice(0, 20)
+        presentismoMap.get("1354")
     );
-
-
-    const fechas = [...new Set(inbound.map(r => r.fecha))]
-        .sort((a, b) => {
-
-            const [diaA, mesA, anioA] = a.split("/");
-            const [diaB, mesB, anioB] = b.split("/");
-
-            return (
-                new Date(`${anioA}-${mesA}-${diaA}`) -
-                new Date(`${anioB}-${mesB}-${diaB}`)
-            );
-
-        });
 
     const fechaFinal = fechaSeleccionada || fechas[fechas.length - 1];
-
-    console.log("Fecha:", fechaFinal);
-
-    console.log(
-        "Google:",
-        google.filter(r => r.fecha === fechaFinal).length
-    );
-
-    console.log(
-        "Facebook:",
-        facebook.filter(r => r.fecha === fechaFinal).length
-    );
-
-    console.log(
-        "Forms:",
-        forms.filter(r => r.fecha === fechaFinal).length
-    );
 
     const grafico = buildHourlyReport({
 
@@ -95,8 +90,35 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
         forms,
 
+        turnos,
+
         fecha: fechaFinal
 
+    });
+
+    const asesores = buildHourlyAdvisorReport({
+
+        inbound,
+
+        google,
+
+        facebook,
+
+        forms,
+
+        turnos,
+
+        presentismo,
+
+        fecha: fechaFinal
+
+    });
+
+    console.log({
+        fecha: fechaFinal,
+        fechas: fechas.length,
+        grafico: grafico.length,
+        asesores: asesores.length
     });
 
     return {
@@ -105,7 +127,9 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
         fechas,
 
-        grafico
+        grafico,
+
+        asesores
 
     };
 

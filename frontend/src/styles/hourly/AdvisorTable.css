@@ -1,0 +1,125 @@
+.advisor-table-container {
+    margin-top: 35px;
+
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+
+    box-shadow: 0 8px 18px rgba(34, 67, 155, .10);
+
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+.advisor-table-title {
+    margin-bottom: 20px;
+    color: #1f3f96;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.advisor-table-header,
+.advisor-table-row {
+    display: grid;
+
+    grid-template-columns:
+        60px
+        minmax(160px, 1fr)
+        70px
+        170px;
+
+    gap: 15px;
+    align-items: center;
+
+    min-width: 0;
+}
+
+.advisor-table-header {
+    background: #edf4ff;
+    color: #1f3f96;
+    font-weight: 700;
+    border-radius: 12px;
+
+    padding: 0 34px;
+    box-sizing: border-box;
+}
+
+.advisor-table-row {
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e7eefc;
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        transform .2s ease,
+        box-shadow .25s ease;
+}
+
+.advisor-table-row:last-child {
+    border-bottom: none;
+}
+
+.advisor-table-row:hover {
+    background: #edf4ff;
+    cursor: pointer;
+    /*transform: scale(1.005);*/
+    box-shadow: inset 4px 0 0 #2954d1;
+}
+ 
+.advisor-table-row span:nth-child(2) {
+    transition: color .25s;
+    font-weight: 500;
+}
+
+.advisor-table-row:hover span:nth-child(2) {
+    color: #2954d1;
+}
+
+.advisor-table-row.selected {
+
+    background: #dbeafe;
+
+    border-left: 5px solid #2954d1;
+
+    color: #1f3f96;
+    
+    font-weight: 700;
+
+}
+
+.advisor-table {
+
+    max-height: 620px;
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
+
+    overflow: auto;
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+
+    font-size: 14px;
+    
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.advisor-table-body {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

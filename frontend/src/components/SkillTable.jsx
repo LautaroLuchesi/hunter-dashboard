@@ -21,9 +21,48 @@ function SkillTable({
         (asesor) =>
             asesor.skill.toUpperCase() === skill.toUpperCase()
     );
+
+
+    console.log("========== DEBUG SKILL ==========");
     console.log("Skill:", skill);
-    console.log("Registros:", registros.length);
-    console.table(registros);
+    console.log("Datos recibidos:", datos.length);
+    console.log("Registros de este skill:", registros.length);
+
+    console.log(
+        "DTO de este skill:",
+        registros.reduce(
+            (total, asesor) => total + Number(asesor.dto || 0),
+            0
+        )
+    );
+
+    console.table(
+        registros.map(r => ({
+            id: r.idAsesor,
+            nombre: r.nombreAsesor,
+            skill: r.skill,
+            dto: r.dto,
+            turno: r.turno
+        }))
+    );
+
+    console.log("================================");
+
+    console.log("========== SKILLS RECIBIDOS ==========");
+
+    console.log(
+        [...new Set(datos.map(r => r.skill))]
+    );
+
+    console.log(
+        "DTO TOTAL RECIBIDO:",
+        datos.reduce(
+            (total, r) => total + Number(r.dto || 0),
+            0
+        )
+    );
+
+    console.log("======================================");
 
     const tm = ordenarAsesores(
         registros.filter((asesor) => asesor.turno === "TM")

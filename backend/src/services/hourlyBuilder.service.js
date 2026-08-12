@@ -3,32 +3,46 @@ function buildHourlyReport({
     google,
     facebook,
     forms,
-    fecha
+    fecha,
+    turnos
 }) {
-
+ 
     const horas = Array.from(
         { length: 12 },
         (_, i) => i + 9
     );
 
+    const turnosMap = new Map();
+
+    turnos.forEach((registro) => {
+        turnosMap.set(registro.idAsesor, registro.turno);
+    });
+
     const resultado = horas.map((hora) => {
 
         const inboundHora = inbound.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
+
 
         const inboundCount = inboundHora.length;
 
         const googleHora = google.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -37,9 +51,12 @@ function buildHourlyReport({
 
         const facebookHora = facebook.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -48,9 +65,12 @@ function buildHourlyReport({
 
         const formsHora = forms.filter((registro) => {
 
+            const turno = turnosMap.get(registro.idAsesor);
+
             return (
                 registro.fecha === fecha &&
-                registro.hora === hora
+                registro.hora === hora &&
+                (turno === "TM" || turno === "TT")
             );
 
         });
@@ -75,23 +95,14 @@ function buildHourlyReport({
         const asesores = asesoresUnicos.size * 7;
 
         return {
-
             hora,
-            
             asesores,
-
             inbound: inboundCount,
-
             google: googleCount,
-
             facebook: facebookCount,
-
             botmaker,
-
             forms: formsCount,
-
             totales
-
         };
     });
 
@@ -99,6 +110,113 @@ function buildHourlyReport({
 
 }
 
+function buildHourlyAdvisorReport({
+    inbound,
+    google,
+    facebook,
+    forms,
+    presentismo,
+    turnos,
+    fecha
+}) {
+
+    const turnosMap = new Map();
+
+    turnos.forEach((registro) => {
+        turnosMap.set(registro.idAsesor, registro.turno);
+    });
+
+    const registros = [
+        ...inbound,
+        ...google,
+        ...facebook,
+        ...forms
+    ].filter((registro) => {
+
+        const turno = turnosMap.get(registro.idAsesor);
+
+        return (
+            registro.fecha === fecha &&
+            (turno === "TM" || turno === "TT")
+        );
+
+    });
+
+    const presentismoMap = new Map();
+
+    presentismo.forEach((registro) => {
+
+        if (!presentismoMap.has(registro.idAsesor)) {
+
+            presentismoMap.set(registro.idAsesor, {
+
+                nombre: registro.nombreAsesor,
+
+                turno: registro.turno
+
+            });
+
+        }
+
+    });
+
+    const asesores = {};
+
+    for (const registro of registros) {
+
+        if (!asesores[registro.idAsesor]) {
+
+            const info = presentismoMap.get(registro.idAsesor);
+
+            asesores[registro.idAsesor] = {
+
+                id: registro.idAsesor,
+
+                nombre: registro.nombreAsesor,
+
+                turno: info?.turno || "",
+
+                horas: {}
+
+            };
+
+        }
+
+        const hora = registro.hora;
+
+        asesores[registro.idAsesor].horas[hora] =
+            (asesores[registro.idAsesor].horas[hora] || 0) + 1;
+
+    }
+
+    Object.values(asesores).forEach((asesor) => {
+
+        asesor.horas = Array.from(
+
+            { length: 12 },
+
+            (_, i) => {
+
+                const hora = i + 9;
+
+                return {
+
+                    hora,
+
+                    datos: asesor.horas[hora] || 0
+
+                };
+
+            }
+
+        );
+
+    });
+
+    return Object.values(asesores);
+
+}
+
 module.exports = {
-    buildHourlyReport
+    buildHourlyReport, buildHourlyAdvisorReport
 };
