@@ -13,7 +13,8 @@ import {
 import {
     FiBarChart2,
     FiClock,
-    FiUser
+    FiUser,
+    FiShoppingCart
 } from "react-icons/fi";
 
 import "../../styles/hourly/AdvisorDetail.css";
@@ -39,7 +40,20 @@ function AdvisorDetail({ asesor }) {
 
             <div className="advisor-detail-content" key={asesor.id}>
 
-                <h2>{asesor.nombre}</h2>
+                <div className="advisor-detail-header">
+
+                    <h2>{asesor.nombre}</h2>
+
+                    <div className="advisor-detail-sales">
+                        <FiShoppingCart className="advisor-sales-icon" />
+
+                        <div>
+                            <span>Ventas del día</span>
+                            <strong>{asesor.ventas || 0}</strong>
+                        </div>
+                    </div>
+
+                </div>
 
                 <div className="advisor-detail-kpis">
 

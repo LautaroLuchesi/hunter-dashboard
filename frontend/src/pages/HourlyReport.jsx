@@ -11,6 +11,7 @@ import Header from "../components/layout/Header";
 import { FiArrowLeft } from "react-icons/fi";
 import AdvisorTable from "../components/hourly/AdvisorTable";
 import AdvisorDetail from "../components/hourly/AdvisorDetail";
+import HourlySummaryTable from "../components/hourly/HourlySummaryTable";
 
 function HourlyReport() {
 
@@ -82,9 +83,33 @@ function HourlyReport() {
 
             </div>
 
-            <HourlyChart
-                data={data.grafico}
-            />
+            <div className="hourly-chart-summary">
+
+                <div className="hourly-summary-container">
+
+                    <h2 className="hourly-summary-title">
+                        Contactos por Hora
+                    </h2>
+
+                    <p className="hourly-summary-subtitle">
+                        Resumen de contactos por hora y skill
+                    </p>
+
+                    <HourlySummaryTable
+                        data={data.grafico}
+                    />
+
+                </div>
+
+                <div className="hourly-chart-area">
+
+                    <HourlyChart
+                        data={data.grafico}
+                    />
+
+                </div>
+
+            </div>
 
             <div className="advisor-section">
 
