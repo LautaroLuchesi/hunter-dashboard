@@ -42,13 +42,13 @@ function Dashboard() {
 
     }, [fechas, fechaSeleccionada]);
 
-    if (!loading) {
+    if (loading) {
         return <LoadingScreen />;
     }
 
     if (error) {
         return <h2>Error al cargar los datos.</h2>;
-    };
+    }
 
     return (
 
