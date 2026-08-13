@@ -12,6 +12,8 @@ import { FiArrowLeft } from "react-icons/fi";
 import AdvisorTable from "../components/hourly/AdvisorTable";
 import AdvisorDetail from "../components/hourly/AdvisorDetail";
 import HourlySummaryTable from "../components/hourly/HourlySummaryTable";
+import LoadingScreen from "../components/LoadingScreen";
+import "../styles/LoadingScreen.css";;
 
 function HourlyReport() {
 
@@ -48,9 +50,7 @@ function HourlyReport() {
     }, [fechaSeleccionada]);
 
     if (!data) {
-
-        return <h2>Generando reporte...</h2>;
-
+        return <LoadingScreen />;
     }
 
     return (

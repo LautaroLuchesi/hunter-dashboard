@@ -14,6 +14,8 @@ import logoHunter from "../assets/Logo_hunter.png";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/layout/Header";
 import { FiBarChart2 } from "react-icons/fi";
+import LoadingScreen from "../components/LoadingScreen";
+import "../styles/LoadingScreen.css";
 
 function Dashboard() {
 
@@ -40,8 +42,8 @@ function Dashboard() {
 
     }, [fechas, fechaSeleccionada]);
 
-    if (loading) {
-        return <h2>Generando reporte...</h2>;
+    if (!loading) {
+        return <LoadingScreen />;
     }
 
     if (error) {
