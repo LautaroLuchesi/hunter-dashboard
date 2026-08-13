@@ -1,6 +1,7 @@
 .advisor-detail {
 
-    max-width: 570px;
+    max-width: none;
+
     background: white;
     border-radius: 22px;
     padding: 25px;
@@ -12,7 +13,9 @@
     height: fit-content;
 
     position: static;
-    margin-top: 35px;
+    margin-top: 0;
+
+    box-sizing: border-box;
 
     transition:
         transform .25s ease,
@@ -133,9 +136,9 @@
 
 .advisor-detail-chart {
     width: 102%;
-    height: 320px;
+    height: 330px;
     margin-left: -4%;
-    margin-top: 10px;
+    margin-top: 60px;
     overflow: hidden;
 }
 
@@ -153,4 +156,46 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.advisor-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.advisor-detail-header h2 {
+    margin: 0;
+}
+
+.advisor-detail-sales {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.advisor-sales-icon {
+    font-size: 28px;
+    color: #2954d1;
+}
+
+.advisor-detail-sales div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.advisor-detail-sales span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.advisor-detail-sales strong {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2954d1;
 }

@@ -6,7 +6,7 @@ function buildHourlyReport({
     fecha,
     turnos
 }) {
- 
+
     const horas = Array.from(
         { length: 12 },
         (_, i) => i + 9
@@ -115,6 +115,7 @@ function buildHourlyAdvisorReport({
     google,
     facebook,
     forms,
+    ventas,
     presentismo,
     turnos,
     fecha
@@ -160,6 +161,31 @@ function buildHourlyAdvisorReport({
 
     });
 
+    const ventasMap = new Map();
+
+    const fechaVentas = fecha
+        .split("/")
+        .reverse()
+        .join("-");
+
+    ventas
+        .filter((venta) => venta.fecha === fechaVentas)
+        .forEach((venta) => {
+
+            if (!ventasMap.has(venta.idAsesor)) {
+                ventasMap.set(venta.idAsesor, 0);
+            }
+
+            ventasMap.set(
+                venta.idAsesor,
+                ventasMap.get(venta.idAsesor) + venta.ventas
+            );
+
+        });
+
+    console.log("FECHA VENTAS:", fechaVentas);
+    console.log("VENTAS DEL DÍA:", Array.from(ventasMap.entries()));
+
     const asesores = {};
 
     for (const registro of registros) {
@@ -175,6 +201,8 @@ function buildHourlyAdvisorReport({
                 nombre: registro.nombreAsesor,
 
                 turno: info?.turno || "",
+
+                ventas: ventasMap.get(registro.idAsesor) || 0,
 
                 horas: {}
 

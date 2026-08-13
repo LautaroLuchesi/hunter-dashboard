@@ -1,3 +1,4 @@
+/*const API_URL = "http://localhost:3000/api/report";*/
 const API_URL = "https://hunter-dashboard-api.onrender.com/api/report";
 
 export async function getReport(fecha) {

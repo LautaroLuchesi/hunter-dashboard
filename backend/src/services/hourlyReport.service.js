@@ -6,6 +6,7 @@ const { parseFormsHour } = require("../parsers/formsHour.parser");
 const { buildHourlyReport, buildHourlyAdvisorReport } = require("./hourlyBuilder.service");
 const { parsePresentismo } = require("../parsers/presentismo.parser");
 const { parseTurnos } = require("../parsers/turnos.parser");
+const { parseVentas } = require("../parsers/ventas.parser");
 
 const generateHourlyReport = async (fechaSeleccionada) => {
 
@@ -14,6 +15,7 @@ const generateHourlyReport = async (fechaSeleccionada) => {
         googleSheet,
         facebookSheet,
         formsSheet,
+        ventasSheet,
         presentismoSheet,
         turnosSheet
     ] = await Promise.all([
@@ -25,6 +27,8 @@ const generateHourlyReport = async (fechaSeleccionada) => {
         googleSheetsService.readSheet("Crudo_Facebook!A:M"),
 
         googleSheetsService.readSheet("Crudo_Forms!A:K"),
+
+        googleSheetsService.readSheet("Vta_Bruta!A:T"),
 
         googleSheetsService.readSheet("PRESENTISMO!A:E"),
 
@@ -39,6 +43,8 @@ const generateHourlyReport = async (fechaSeleccionada) => {
     const facebook = parseFacebookHour(facebookSheet);
 
     const forms = parseFormsHour(formsSheet);
+
+    const ventas = parseVentas(ventasSheet);
 
     const presentismo = parsePresentismo(presentismoSheet);
 
@@ -105,6 +111,8 @@ const generateHourlyReport = async (fechaSeleccionada) => {
         facebook,
 
         forms,
+        
+        ventas,
 
         turnos,
 
