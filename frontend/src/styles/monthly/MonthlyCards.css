@@ -1,0 +1,176 @@
+.monthly-cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 18px;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.monthly-card {
+
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid #cfe0ff;
+
+    border-radius: 18px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 20px rgba(30, 64, 175, .08);
+
+    overflow: hidden;
+
+}
+
+
+.monthly-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 14px;
+    right: 14px;
+
+    height: 4px;
+
+    border-radius: 0 0 6px 6px;
+
+}
+
+
+.monthly-card h3 {
+
+    margin: 4px 0 12px;
+
+    color: #21439d;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.monthly-card-value {
+
+    background: #f4f8ff;
+
+    border: 1px solid #cfe0ff;
+
+    border-radius: 14px;
+
+    padding: 8px;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+}
+
+
+/* INBOUND */
+
+.monthly-card-inbound::before {
+    background: #3366ff;
+}
+
+.monthly-card-inbound .monthly-card-value {
+    color: #3366ff;
+}
+
+
+/* GOOGLE */
+
+.monthly-card-google::before {
+    background: #16a34a;
+}
+
+.monthly-card-google .monthly-card-value {
+    color: #16a34a;
+}
+
+
+/* FACEBOOK */
+
+.monthly-card-facebook::before {
+    background: #9333ea;
+}
+
+.monthly-card-facebook .monthly-card-value {
+    color: #9333ea;
+}
+
+
+/* BOTMAKER */
+
+.monthly-card-botmaker::before {
+    background: #0891b2;
+}
+
+.monthly-card-botmaker .monthly-card-value {
+    color: #0891b2;
+}
+
+
+/* DÍAS */
+
+.monthly-card-days::before {
+    background: #64748b;
+}
+
+.monthly-card-days .monthly-card-value {
+    color: #21439d;
+}
+
+
+/* TOTALES */
+
+.monthly-card-total::before {
+    background: #0f172a;
+}
+
+.monthly-card-total .monthly-card-value {
+    color: #0f172a;
+}
+
+
+@media (max-width: 1100px) {
+
+    .monthly-cards {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .monthly-cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}

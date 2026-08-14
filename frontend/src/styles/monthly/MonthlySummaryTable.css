@@ -1,0 +1,173 @@
+.monthly-summary-table {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid #d8e4ff;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.monthly-summary-table-header {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1.3fr 1.1fr 1.1fr 1.2fr 1.4fr 0.8fr 1.1fr;
+
+    align-items: center;
+}
+
+.monthly-summary-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1.3fr 1.1fr 1.3fr 1.2fr 1.5fr 1.1fr 0.6fr;
+
+    align-items: center;
+}
+
+
+.monthly-summary-table-header {
+
+    min-height: 58px;
+
+    background: #eef4ff;
+
+    color: #21439d;
+
+    font-size: 12px;
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    padding: 0 3px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+.monthly-summary-table-body {
+
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.monthly-summary-row {
+
+    min-height: 46px;
+
+    border-top: 1px solid #edf1f7;
+
+    color: #475569;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-align: center;
+
+    padding: 0 4px;
+}
+
+
+.monthly-summary-row:hover {
+
+    background: #f7faff;
+}
+
+
+/* =========================
+   COLORES
+========================= */
+
+.monthly-summary-asesores {
+
+    font-weight: 700;
+
+    color: #e53935;
+}
+
+.monthly-summary-advisors {
+    font-weight: 700;
+    color: #21439d;
+}
+
+.monthly-summary-inbound {
+
+    color: #3366ff;
+
+    font-weight: 600;
+}
+
+
+.monthly-summary-google {
+
+    color: #16a34a;
+
+    font-weight: 600;
+}
+
+
+.monthly-summary-facebook {
+
+    color: #9333ea;
+
+    font-weight: 600;
+}
+
+
+.monthly-summary-botmaker {
+
+    color: #0891b2;
+
+    font-weight: 700;
+}
+
+
+.monthly-summary-forms {
+
+    color: #f97316;
+
+    font-weight: 600;
+}
+
+
+.monthly-summary-total {
+
+    color: #0f172a;
+
+    font-weight: 700;
+}
+
+
+.monthly-summary-header-fecha {
+    color: #21439d;
+}
+
+
+.monthly-summary-fecha {
+    color: #21439d;
+}
