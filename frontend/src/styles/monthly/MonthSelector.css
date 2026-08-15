@@ -1,0 +1,224 @@
+.month-selector {
+
+    width: 100%;
+
+    background: #eef4ff;
+
+    border: 1px solid #d4e2ff;
+
+    border-radius: 20px;
+
+    padding: 22px 24px;
+
+    box-sizing: border-box;
+
+    margin-top: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.month-selector-header {
+
+    margin-bottom: 18px;
+
+}
+
+
+.month-selector-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.month-selector-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    font-size: 24px;
+
+}
+
+
+.month-selector-title h2 {
+
+    margin: 0;
+
+    color: #21439d;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+}
+
+
+.month-selector-title p {
+
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+.month-selector-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.month-selector-arrow {
+
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid #9dbcf7;
+
+    background: #ffffff;
+
+    color: #21439d;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        background-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.month-selector-arrow:hover:not(:disabled) {
+
+    background: #dbeafe;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(41, 84, 209, .15);
+
+}
+
+
+.month-selector-arrow:disabled {
+
+    opacity: .35;
+
+    cursor: default;
+
+}
+
+
+.month-selector-months {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 8px;
+
+    background: #dbe8ff;
+
+    border: 1px solid #c5d9ff;
+
+    border-radius: 14px;
+
+    overflow-x: auto;
+
+}
+
+
+.month-selector-month {
+
+    border: none;
+
+    background: transparent;
+
+    color: #21439d;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.month-selector-month:hover {
+
+    background: #ffffff;
+
+}
+
+
+.month-selector-month.active {
+
+    background: #2954d1;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 12px rgba(41, 84, 209, .20);
+
+}
+
+
+@media (max-width: 800px) {
+
+    .month-selector-months {
+
+        justify-content: flex-start;
+
+    }
+
+    .month-selector-month {
+
+        padding: 9px 12px;
+
+    }
+
+}

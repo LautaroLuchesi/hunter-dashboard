@@ -1,0 +1,104 @@
+.monthly-page {
+    width: 100%;
+    max-width: 1700px;
+
+    margin: 0 auto;
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   TABLA + GRÁFICO
+========================= */
+
+.monthly-chart-summary {
+    display: grid;
+
+    grid-template-columns:
+        minmax(500px, 1.05fr)
+        minmax(0, 1.8fr);
+
+    gap: 20px;
+
+    width: 100%;
+    align-items: stretch;
+
+    margin-top: 35px;
+}
+
+
+.monthly-summary-container {
+    min-width: 0;
+    width: 100%;
+
+    background: white;
+    border-radius: 20px;
+
+    padding: 14px 20px 20px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 8px 18px rgba(34, 67, 155, .10);
+
+    height: 700px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.monthly-chart-container {
+    min-width: 0;
+    width: 100%;
+
+    height: 700px;
+}
+
+.monthly-summary-title h2{
+
+    margin: 0;
+
+    color: #21439d;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.monthly-summary-title h2::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+    height: 28px;
+
+    background: #2954d1;
+
+    border-radius: 4px;
+
+    margin-right: 10px;
+
+    vertical-align: -5px;
+}
+
+.monthly-summary-title{
+
+    margin: 0;
+
+    color: #21439d;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    letter-spacing: -0.4px;
+    
+    padding: 20px;
+}

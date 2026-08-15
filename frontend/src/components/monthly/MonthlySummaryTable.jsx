@@ -1,14 +1,14 @@
-import "../../styles/hourly/HourlySummaryTable.css";
+import "../../styles/monthly/MonthlySummaryTable.css";
 
-function HourlySummaryTable({ data }) {
- 
+function MonthlySummaryTable({ data }) {
+
     return (
-        <div className="hourly-summary-table">
+        <div className="monthly-summary-table">
 
-            <div className="hourly-summary-table-header">
+            <div className="monthly-summary-table-header">
 
-                <span className="hourly-summary-header-hora">
-                    Hora
+                <span className="monthly-summary-header-fecha">
+                    Fecha
                 </span>
 
                 <span className="hourly-summary-header-asesores">
@@ -41,44 +41,44 @@ function HourlySummaryTable({ data }) {
 
             </div>
 
-            <div className="hourly-summary-table-body">
+            <div className="monthly-summary-table-body">
 
                 {data.map((item) => (
 
                     <div
-                        className="hourly-summary-row"
-                        key={item.hora}
+                        className="monthly-summary-row"
+                        key={item.fecha}
                     >
 
-                        <span className="hourly-summary-hora">
-                            {item.hora}:00
+                        <span class="monthly-summary-fecha">
+                            {item.fecha}
                         </span>
 
-                        <span className="hourly-summary-asesores">
+                        <span className="monthly-summary-asesores">
                             {item.asesores}
                         </span>
 
-                        <span className="hourly-summary-inbound">
+                        <span className="monthly-summary-inbound">
                             {item.inbound}
                         </span>
 
-                        <span className="hourly-summary-google">
+                        <span className="monthly-summary-google">
                             {item.google}
                         </span>
 
-                        <span className="hourly-summary-facebook">
+                        <span className="monthly-summary-facebook">
                             {item.facebook}
                         </span>
-
-                        <span className="hourly-summary-botmaker">
+ 
+                        <span className="monthly-summary-botmaker">
                             {item.botmaker}
                         </span>
 
-                        <span className="hourly-summary-forms">
+                        <span className="monthly-summary-forms">
                             {item.forms}
                         </span>
 
-                        <span className="hourly-summary-totales">
+                        <span className="monthly-summary-total">
                             {item.totales}
                         </span>
 
@@ -92,4 +92,4 @@ function HourlySummaryTable({ data }) {
     );
 }
 
-export default HourlySummaryTable;
+export default MonthlySummaryTable;

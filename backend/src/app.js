@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const reportRoutes = require("./routes/report.routes");
 const hourlyReportRoutes = require("./routes/hourlyReport.routes");
+const monthlyReportRoutes = require("./routes/monthlyReport.routes");
 
 const app = express();
 
@@ -15,4 +16,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/report", reportRoutes);
 app.use("/api/hourly-report", hourlyReportRoutes);
+app.use("/api/monthly-report", monthlyReportRoutes);
+
 module.exports = app;
