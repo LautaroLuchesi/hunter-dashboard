@@ -11,6 +11,8 @@ import {
 
 import "../../styles/monthly/MonthlyChart.css";
 
+import MonthlyTooltip from "./MonthlyTooltip";
+
 function MonthlyChart({ data }) {
 
     const obtenerDiaSemana = (fecha) => {
@@ -73,6 +75,7 @@ function MonthlyChart({ data }) {
 
             <ResponsiveContainer
                 width="100%"
+                height="100%"
             >
 
                 <LineChart
@@ -145,8 +148,15 @@ function MonthlyChart({ data }) {
                     />
 
 
-                    <Tooltip />
-
+                    <Tooltip
+                        content={<MonthlyTooltip />}
+                        cursor={{
+                            stroke: "#3b82f6",
+                            strokeOpacity: .35,
+                            strokeWidth: 2,
+                            strokeDasharray: "5 5"
+                        }}
+                    />
 
                     <Legend
                         verticalAlign="top"

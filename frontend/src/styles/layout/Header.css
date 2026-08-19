@@ -177,3 +177,14 @@
     font-weight: 700;
 
 }
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-navigation .header-button {
+    white-space: nowrap;
+    flex-shrink: 0;
+}

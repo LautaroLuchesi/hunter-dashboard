@@ -11,11 +11,19 @@ import MonthSelector from "../components/monthly/MonthSelector";
 import MonthlySummaryTable from "../components/monthly/MonthlySummaryTable";
 import MonthlyChart from "../components/monthly/MonthlyChart";
 
+import LoadingScreen from "../components/LoadingScreen";
+import "../styles/LoadingScreen.css";
+
+import MonthlyAdvisorTable from "../components/monthly/MonthlyAdvisorTable";
+import MonthlyAdvisorDetail from "../components/monthly/MonthlyAdvisorDetail";
+
+
 function MonthlyReport() {
 
     const [data, setData] = useState(null);
     const [mesSeleccionado, setMesSeleccionado] = useState(null);
     const [asesorSeleccionado, setAsesorSeleccionado] = useState(null);
+
 
     useEffect(() => {
 
@@ -53,13 +61,7 @@ function MonthlyReport() {
 
 
     if (!data) {
-
-        return (
-            <h2>
-                Generando reporte mensual...
-            </h2>
-        );
-
+        return <LoadingScreen />;
     }
 
 
@@ -70,14 +72,24 @@ function MonthlyReport() {
             <Header
                 title="Reporte Mensual"
                 date={data.mes}
+
                 buttonText={
                     <>
                         <FiArrowLeft />
                         <span>Dashboard</span>
                     </>
                 }
+
                 buttonLink="/"
+
+                navigation={[
+                    {
+                        label: "Reporte por Hora",
+                        link: "/hourly-report"
+                    }
+                ]}
             />
+
 
             <MonthSelector
                 meses={data.meses}
@@ -85,18 +97,22 @@ function MonthlyReport() {
                 onChange={setMesSeleccionado}
             />
 
+
             <MonthlyCards
                 grafico={data.grafico}
                 asesores={data.asesores}
             />
 
-            <div className="monthly-chart-summary">
 
-                <div className="monthly-summary-container">
+            <div className="monthly-daily-section">
 
-                    <div className="monthly-summary-title">
+                <div className="monthly-daily-table">
 
-                        <h2>Contactos por Día</h2>
+                    <div className="monthly-daily-title">
+
+                        <h2>
+                            Contactos por Día
+                        </h2>
 
                         <p>
                             Resumen de contactos por día y skill
@@ -111,7 +127,7 @@ function MonthlyReport() {
                 </div>
 
 
-                <div className="monthly-chart-container">
+                <div className="monthly-daily-chart">
 
                     <MonthlyChart
                         data={data.grafico}
@@ -121,10 +137,26 @@ function MonthlyReport() {
 
             </div>
 
+            <div className="monthly-advisor-section">
+
+                <MonthlyAdvisorTable
+                    asesores={data.asesores}
+                    asesorSeleccionado={asesorSeleccionado}
+                    onSelect={setAsesorSeleccionado}
+                />
+
+                <MonthlyAdvisorDetail
+                    asesor={asesorSeleccionado}
+                />
+
+            </div>
+
+
         </div>
 
     );
 
 }
+
 
 export default MonthlyReport;

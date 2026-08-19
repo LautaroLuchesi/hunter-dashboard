@@ -9,7 +9,8 @@ function Header({
     title,
     date,
     buttonText,
-    buttonLink
+    buttonLink,
+    navigation = []
 }) {
 
     return (
@@ -48,6 +49,7 @@ function Header({
 
             </div>
 
+
             <div className="app-header-right">
 
                 {date && (
@@ -55,6 +57,31 @@ function Header({
                         📅 {date}
                     </div>
                 )}
+
+
+                {navigation.length > 0 && (
+
+                    <div className="header-navigation">
+
+                        {navigation.map((item) => (
+
+                            <Link
+                                key={item.link}
+                                to={item.link}
+                                className="header-button"
+                            >
+                                {item.icon}
+                                <span>
+                                    {item.label}
+                                </span>
+                            </Link>
+
+                        ))}
+
+                    </div>
+
+                )}
+
 
                 {buttonText && buttonLink && (
 

@@ -3,6 +3,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     margin-top: 30px;
+    
 }
 
 .hourly-card {
@@ -10,7 +11,7 @@
     border: 1px solid #c8dbff;
     border-radius: 22px;
     padding: 16px;
-    min-height: 110px;
+    min-height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

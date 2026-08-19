@@ -60,13 +60,22 @@ function HourlyReport() {
             <Header
                 title="Reporte por Hora"
                 date={data.fecha}
+
                 buttonText={
                     <>
                         <FiArrowLeft />
                         <span>Dashboard</span>
                     </>
                 }
+
                 buttonLink="/"
+
+                navigation={[
+                    {
+                        label: "Reporte Mensual",
+                        link: "/monthly-report"
+                    }
+                ]}
             />
 
             <DateSelector
