@@ -50,7 +50,7 @@ function MonthlySummaryTable({ data }) {
                         key={item.fecha}
                     >
 
-                        <span class="monthly-summary-fecha">
+                        <span className="monthly-summary-fecha">
                             {item.fecha}
                         </span>
 

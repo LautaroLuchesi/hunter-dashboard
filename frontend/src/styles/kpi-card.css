@@ -1,17 +1,17 @@
 .kpi-card {
 
-    background: #eef4ff;
-
-    border: 1px solid #d7e4ff;
-
+    background: #edf4ff;
+    border: 1px solid #c8dbff;
     border-radius: 22px;
-
-    text-align: center;
-
-    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
-
-    transition: .25s;
-
+    padding: 2px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 18px rgba(34, 67, 155, .10);
+    position: relative;
+    overflow: hidden;
 }
 
 .kpi-card:hover {

@@ -1,5 +1,5 @@
-/*const API_URL = "http://localhost:3000/api/hourly-report";*/
-const API_URL = "https://hunter-dashboard-api.onrender.com/api/hourly-report";
+const API_URL = "http://localhost:3000/api/hourly-report";
+/*const API_URL = "https://hunter-dashboard-api.onrender.com/api/hourly-report";*/
 
 export async function getHourlyReport(fecha) {
 

@@ -1,0 +1,428 @@
+.monthly-advisor-detail {
+
+    width: 100%;
+    max-width: none;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    border: 1px solid #d8e4ff;
+
+    box-shadow:
+        0 8px 20px rgba(25, 60, 130, .08);
+
+    box-sizing: border-box;
+
+    min-width: 0;
+
+    height: fit-content;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+        
+    margin-top: 35px;
+    
+}
+
+
+.monthly-advisor-detail:hover {
+
+    box-shadow:
+        0 12px 30px rgba(30, 58, 138, .12);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.monthly-advisor-detail-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+.monthly-advisor-detail-header h2 {
+
+    margin: 0;
+
+    color: #21439d;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+
+.monthly-advisor-detail-header h2::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 5px;
+
+    height: 25px;
+
+    background: #2954d1;
+
+    border-radius: 4px;
+
+    margin-right: 10px;
+
+    vertical-align: -4px;
+}
+
+
+/* =========================
+   VENTAS
+========================= */
+
+.monthly-advisor-detail-sales {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: auto;
+}
+
+
+.monthly-advisor-sales-icon {
+
+    font-size: 28px;
+
+    color: #2954d1;
+}
+
+
+.monthly-advisor-detail-sales div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.monthly-advisor-detail-sales span {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+.monthly-advisor-detail-sales strong {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: #2954d1;
+}
+
+
+/* =========================
+   KPIs
+========================= */
+
+.monthly-advisor-detail-kpis {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    margin-top: 22px;
+}
+
+
+.monthly-advisor-detail-kpis>div {
+
+    flex: 1;
+
+    background: #edf4ff;
+
+    border-radius: 16px;
+
+    padding: 14px 18px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background-color .2s ease;
+}
+
+
+.monthly-advisor-detail-kpis>div:hover {
+
+    transform: translateY(-3px);
+
+    background: #e5efff;
+
+    box-shadow:
+        0 8px 18px rgba(41, 84, 209, .12);
+}
+
+
+.monthly-advisor-kpi-icon {
+
+    font-size: 22px;
+
+    color: #2954d1;
+
+    margin-bottom: 5px;
+}
+
+
+.monthly-advisor-detail-kpis h4 {
+
+    margin: 0 0 5px;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.monthly-advisor-detail-kpis span {
+
+    display: block;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #21439d;
+}
+
+
+/* =========================
+   KPI DÍA PICO
+========================= */
+
+.monthly-advisor-detail-kpis>div:nth-child(1),
+.monthly-advisor-detail-kpis>div:nth-child(3) {
+
+    transform: translateY(20px);
+}
+
+
+.monthly-advisor-detail-kpis>div:nth-child(1):hover,
+.monthly-advisor-detail-kpis>div:nth-child(3):hover {
+
+    transform: translateY(10px);
+}
+
+
+.monthly-advisor-detail-kpis>div:nth-child(2) {
+
+    box-shadow:
+        0 6px 16px rgba(41, 84, 209, .10);
+}
+
+
+.monthly-advisor-detail-kpis>div:nth-child(2) span {
+
+    color: #2954d1;
+
+    font-weight: 800;
+}
+
+
+.monthly-advisor-kpi-pico-info {
+
+    width: 65%;
+
+    height: 4px;
+
+    margin: 7px auto 3px;
+
+    background: #d6e3fa;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.monthly-advisor-kpi-pico-bar {
+
+    height: 100%;
+
+    background: #2954d1;
+
+    border-radius: 10px;
+
+    transition: width .5s ease;
+}
+
+
+.monthly-advisor-detail-kpis small {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   GRÁFICO
+========================= */
+
+.monthly-advisor-detail-chart {
+
+    width: 102%;
+
+    height: 320px;
+
+    margin-left: -4%;
+
+    margin-top: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+.monthly-advisor-detail-content {
+
+    animation:
+        monthlyAdvisorDetailIn .15s ease;
+}
+
+
+@keyframes monthlyAdvisorDetailIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .monthly-advisor-detail {
+
+        max-width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .monthly-advisor-detail {
+
+        padding: 18px;
+
+    }
+
+
+    .monthly-advisor-detail-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .monthly-advisor-detail-sales {
+
+        margin-left: 0;
+
+    }
+
+
+    .monthly-advisor-detail-kpis {
+
+        gap: 10px;
+
+    }
+
+
+    .monthly-advisor-detail-kpis>div {
+
+        padding: 12px 8px;
+
+    }
+
+
+    .monthly-advisor-detail-kpis h4 {
+
+        font-size: 12px;
+
+    }
+
+
+    .monthly-advisor-detail-kpis span {
+
+        font-size: 21px;
+
+    }
+
+
+    .monthly-advisor-detail-chart {
+
+        width: 100%;
+
+        margin-left: 0;
+
+    }
+
+}

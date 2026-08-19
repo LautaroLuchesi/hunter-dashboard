@@ -57,13 +57,16 @@ function Dashboard() {
             <Header
                 title="Seguimiento Hunter Uruguay"
                 date={fechaSeleccionada}
-                buttonText={
-                    <>
-                        <FiBarChart2 />
-                        <span>Reporte por Hora</span>
-                    </>
-                }
-                buttonLink="/hourly-report"
+                navigation={[
+                    {
+                        label: "Reporte por Hora",
+                        link: "/hourly-report"
+                    },
+                    {
+                        label: "Reporte Mensual",
+                        link: "/monthly-report"
+                    }
+                ]}
             />
 
             <section className="dashboard-section">

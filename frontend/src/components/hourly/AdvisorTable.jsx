@@ -52,7 +52,7 @@ function AdvisorTable({
                                 data={asesor.horas}
                             />
 
-                        </div>
+                        </div> 
 
                     ))}
                 </div>

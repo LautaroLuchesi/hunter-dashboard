@@ -1,0 +1,185 @@
+.monthly-advisor-table-container {
+    margin-top: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 18px rgba(34, 67, 155, .10);
+
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.monthly-advisor-table-title {
+
+    margin: 0 0 20px;
+
+    color: #1f3f96;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+
+.monthly-advisor-table-header,
+.monthly-advisor-table-row {
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        minmax(150px, 1fr)
+        60px
+        65px
+        160px;
+
+    gap: 10px;
+
+    align-items: center;
+
+    min-width: 0;
+
+    font-size: 14px;
+}
+
+
+.monthly-advisor-table-header {
+
+    background: #edf4ff;
+
+    color: #1f3f96;
+
+    font-weight: 700;
+
+    border-radius: 12px;
+
+    padding: 12px 20px;
+
+    box-sizing: border-box;
+
+}
+
+
+.monthly-advisor-table-row {
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #e7eefc;
+
+    cursor: pointer;
+
+    transition:
+        background-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.monthly-advisor-table-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.monthly-advisor-table-row:hover {
+
+    background: #edf4ff;
+
+    box-shadow:
+        inset 4px 0 0 #2954d1;
+
+}
+
+
+.monthly-advisor-table-row.selected {
+
+    background: #dbeafe;
+
+    border-left: 5px solid #2954d1;
+
+    color: #1f3f96;
+
+    font-weight: 700;
+
+}
+
+
+.monthly-advisor-name {
+
+    transition: color .25s ease;
+
+    font-weight: 500;
+
+}
+
+
+.monthly-advisor-table-row:hover .monthly-advisor-name {
+
+    color: #2954d1;
+
+}
+
+
+.monthly-advisor-data {
+
+    font-weight: 700;
+
+    color: #21439d;
+
+}
+
+
+.monthly-advisor-table-body {
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+}
+
+
+.monthly-advisor-table-empty {
+
+    padding: 40px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+}
+
+
+@media (max-width: 900px) {
+
+    .monthly-advisor-table-header,
+    .monthly-advisor-table-row {
+
+        grid-template-columns:
+            40px
+            minmax(140px, 1fr)
+            60px
+            60px
+            130px;
+
+        gap: 10px;
+
+        padding-left: 12px;
+        padding-right: 12px;
+
+    }
+
+}
