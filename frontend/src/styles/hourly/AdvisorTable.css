@@ -7,12 +7,14 @@
 
     box-shadow: 0 8px 18px rgba(34, 67, 155, .10);
 
-    width: 100%;
+    width: 660px;
     min-width: 0;
 
     box-sizing: border-box;
 
     overflow: hidden;
+
+    border: 1px solid #d8e4ff;
 }
 
 .advisor-table-title {
@@ -50,7 +52,7 @@
 
 .advisor-table-row {
     align-items: center;
-    padding: 18px 20px;
+    padding: 14px 18px;
     border-bottom: 1px solid #e7eefc;
     cursor: pointer;
 

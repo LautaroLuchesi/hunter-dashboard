@@ -163,10 +163,7 @@ function buildHourlyAdvisorReport({
 
     const ventasMap = new Map();
 
-    const fechaVentas = fecha
-        .split("/")
-        .reverse()
-        .join("-");
+    const fechaVentas = fecha;
 
     ventas
         .filter((venta) => venta.fecha === fechaVentas)

@@ -15,6 +15,8 @@
     min-width: 0;
 
     box-sizing: border-box;
+
+    border: 1px solid #d8e4ff;
 }
 
 
@@ -67,12 +69,14 @@
 
     box-sizing: border-box;
 
+    padding: 0 40px;
+
 }
 
 
 .monthly-advisor-table-row {
 
-    padding: 15px 20px;
+    padding: 14px 18px;
 
     border-bottom: 1px solid #e7eefc;
 
@@ -162,6 +166,29 @@
 
 }
 
+.monthly-advisor-table{
+     max-height: 620px;
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
+
+    border: 1px solid #d7e4ff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(30, 58, 138, .08);
+
+    font-size: 14px;
+    
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
 
 @media (max-width: 900px) {
 
@@ -182,4 +209,4 @@
 
     }
 
-}
+} 

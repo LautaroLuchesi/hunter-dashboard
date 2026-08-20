@@ -7,16 +7,11 @@
 
     background: #ffffff;
 
-    border: 1px solid #d8e4ff;
-
     border-radius: 20px;
 
     padding: 25px;
 
     box-sizing: border-box;
-
-    box-shadow:
-        0 8px 25px rgba(30, 64, 175, 0.08);
 }
 
 

@@ -85,7 +85,6 @@
 .advisor-section {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 30px;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
@@ -95,11 +94,6 @@
 .advisor-section>* {
     width: 100%;
     min-width: 0;
-}
-
-.advisor-section>* {
-    min-width: 0;
-    width: 100%;
 }
 
 .hourly-chart-container {

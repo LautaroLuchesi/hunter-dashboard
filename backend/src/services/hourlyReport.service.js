@@ -8,6 +8,34 @@ const { parsePresentismo } = require("../parsers/presentismo.parser");
 const { parseTurnos } = require("../parsers/turnos.parser");
 const { parseVentas } = require("../parsers/ventas.parser");
 
+
+function normalizeHourlyDate(fecha) {
+
+    if (!fecha) return null;
+
+    const texto = String(fecha).trim();
+
+    // YYYY-MM-DD
+    if (/^\d{4}-\d{1,2}-\d{1,2}$/.test(texto)) {
+
+        const [anio, mes, dia] = texto.split("-");
+
+        return `${anio}-${mes.padStart(2, "0")}-${dia.padStart(2, "0")}`;
+
+    }
+
+    // D/M/YYYY o DD/MM/YYYY
+    if (/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(texto)) {
+
+        const [dia, mes, anio] = texto.split("/");
+
+        return `${anio}-${mes.padStart(2, "0")}-${dia.padStart(2, "0")}`;
+
+    }
+
+    return texto;
+}
+
 const generateHourlyReport = async (fechaSeleccionada) => {
 
     const [
@@ -36,13 +64,26 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
     ]);
 
-    const inbound = parseInboundHour(inboundSheet);
+    const inbound = parseInboundHour(inboundSheet).map(r => ({
+        ...r,
+        fecha: normalizeHourlyDate(r.fecha)
+    }));
 
-    const google = parseGoogleHour(googleSheet);
 
-    const facebook = parseFacebookHour(facebookSheet);
+    const google = parseGoogleHour(googleSheet).map(r => ({
+        ...r,
+        fecha: normalizeHourlyDate(r.fecha)
+    }));
 
-    const forms = parseFormsHour(formsSheet);
+    const facebook = parseFacebookHour(facebookSheet).map(r => ({
+        ...r,
+        fecha: normalizeHourlyDate(r.fecha)
+    }));
+
+    const forms = parseFormsHour(formsSheet).map(r => ({
+        ...r,
+        fecha: normalizeHourlyDate(r.fecha)
+    }));
 
     const ventas = parseVentas(ventasSheet);
 
@@ -52,16 +93,14 @@ const generateHourlyReport = async (fechaSeleccionada) => {
 
     const fechas = [
         ...new Set([
-            ...inbound.map(r => r.fecha),
-            ...google.map(r => r.fecha),
-            ...facebook.map(r => r.fecha),
-            ...forms.map(r => r.fecha)
+            ...inbound.map(r => normalizeHourlyDate(r.fecha)),
+            ...google.map(r => normalizeHourlyDate(r.fecha)),
+            ...facebook.map(r => normalizeHourlyDate(r.fecha)),
+            ...forms.map(r => normalizeHourlyDate(r.fecha))
         ])
-    ].filter(Boolean).sort((a, b) => {
-
-        return new Date(a) - new Date(b);
-
-    });
+    ]
+        .filter(Boolean)
+        .sort();
 
     const presentismoMap = new Map();
 
@@ -111,7 +150,7 @@ const generateHourlyReport = async (fechaSeleccionada) => {
         facebook,
 
         forms,
-        
+
         ventas,
 
         turnos,
